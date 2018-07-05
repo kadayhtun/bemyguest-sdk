@@ -11,8 +11,9 @@ use BmgApiV2Lib\APIException;
 use BmgApiV2Lib\Exceptions;
 use BmgApiV2Lib\APIHelper;
 use BmgApiV2Lib\Models;
+use PHPUnit\Framework\TestCase;
 
-class BulkBuysControllerTest extends \PHPUnit_Framework_TestCase
+class BulkBuysControllerTest extends TestCase
 {
     /**
      * @var \BmgApiV2Lib\Controllers\BulkBuysController Controller instance

@@ -11,8 +11,9 @@ use BmgApiV2Lib\APIException;
 use BmgApiV2Lib\Exceptions;
 use BmgApiV2Lib\APIHelper;
 use BmgApiV2Lib\Models;
+use PHPUnit\Framework\TestCase;
 
-class APIControllerTest extends \PHPUnit_Framework_TestCase
+class APIControllerTest extends TestCase
 {
     /**
      * @var \BmgApiV2Lib\Controllers\APIController Controller instance
@@ -65,7 +66,7 @@ class APIControllerTest extends \PHPUnit_Framework_TestCase
         // Test headers
         $headers = [];
         $headers['Content-Type'] = null ;
-        
+
         $this->assertTrue(
             TestHelper::areHeadersProperSubsetOf($headers, $this->httpResponse->getResponse()->getHeaders(), true),
             "Headers do not match"

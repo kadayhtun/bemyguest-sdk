@@ -22,27 +22,6 @@ define("ASSERT_PRECISION", 0.01);
 class TestHelper
 {
     /**
-     * Check whether the response array contains all expected values
-     * @param  array  $expected  The expected values
-     * @param  array  $response    The response from the endpoint call
-     */
-    public static function isArraySubset(
-        array $expected,
-        array $response
-    ) {
-        foreach (array_values($expected) as $eK => $eV) {
-            $found = false;
-            foreach (array_values($response) as $rK => $rV) {
-                if ($eV == $rV)
-                    $found = true;
-            }
-            if ($found == false) {
-                $this->fail("Response array is missing values");
-            }
-        }
-    }
-
-    /**
      * Recursively check whether the leftTree is a proper subset of the right tree
      * @param   array   $leftTree       Left tree
      * @param   array   $rightTree      Right tree
