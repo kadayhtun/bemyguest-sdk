@@ -12,8 +12,9 @@ use BmgApiV2Lib\Exceptions;
 use BmgApiV2Lib\APIHelper;
 use BmgApiV2Lib\Models;
 use BmgApiV2Lib\Utils\DateTimeHelper;
+use PHPUnit\Framework\TestCase;
 
-class ProductsControllerTest extends \PHPUnit_Framework_TestCase
+class ProductsControllerTest extends TestCase
 {
     /**
      * @var \BmgApiV2Lib\Controllers\ProductsController Controller instance
