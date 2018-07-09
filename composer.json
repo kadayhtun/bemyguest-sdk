@@ -32,7 +32,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "cs": "phpcs",
-        "cbf": "phpcbf"
+        "sniff": "phpcs --report=summary --standard=PSR12 src/",
+        "beautify": "phpcbf --report=diff --standard=PSR12 src/ -vv"
     }
 }
