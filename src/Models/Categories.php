@@ -17,7 +17,7 @@ class Categories implements JsonSerializable
     /**
      * Data object
      * @required
-     * @var \BmgApiV2Lib\Models\CategoriesData $data public property
+     * @var \BmgApiV2Lib\Models\CategoriesData[] $data public property
      */
     public $data;
 
