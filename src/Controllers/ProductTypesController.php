@@ -39,7 +39,7 @@ class ProductTypesController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -59,9 +59,9 @@ class ProductTypesController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/product-types/{uuid}/price-lists/{date}';
+        $_queryBuilder = $_queryBuilder . '/v2/product-types/{uuid}/price-lists/{date}';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -130,9 +130,9 @@ class ProductTypesController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/product-types/{uuid}';
+        $_queryBuilder = $_queryBuilder . '/v2/product-types/{uuid}';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -204,9 +204,9 @@ class ProductTypesController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/products/{uuid}/product-types';
+        $_queryBuilder = $_queryBuilder . '/v2/products/{uuid}/product-types';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -280,9 +280,9 @@ class ProductTypesController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/product-types/{uuid}/price-lists';
+        $_queryBuilder = $_queryBuilder . '/v2/product-types/{uuid}/price-lists';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (

@@ -38,7 +38,7 @@ class BulkBuysController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -54,9 +54,9 @@ class BulkBuysController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bulk-product-types';
+        $_queryBuilder = $_queryBuilder . '/v2/bulk-product-types';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -102,9 +102,9 @@ class BulkBuysController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bulk-product';
+        $_queryBuilder = $_queryBuilder . '/v2/bulk-product';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -154,9 +154,9 @@ class BulkBuysController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bulk-product/';
+        $_queryBuilder = $_queryBuilder . '/v2/bulk-product/';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);

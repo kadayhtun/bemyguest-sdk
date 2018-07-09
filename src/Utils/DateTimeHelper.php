@@ -191,7 +191,7 @@ class DateTimeHelper
             return null;
         } else {
             // Check for timezone information and append it if missing
-            if (!(substr($datetime, strlen($datetime)-1) == 'Z' || strpos($datetime, '+'))) {
+            if (!(substr($datetime, strlen($datetime) - 1) == 'Z' || strpos($datetime, '+'))) {
                 $datetime .= 'Z';
             }
 

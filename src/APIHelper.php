@@ -100,7 +100,7 @@ class APIHelper
         $query = preg_replace("#//+#", "/", $query);
 
         //return process url
-        return $protocol.$query;
+        return $protocol . $query;
     }
 
     /**

@@ -38,7 +38,7 @@ class BookingsController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -75,9 +75,9 @@ class BookingsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bookings/';
+        $_queryBuilder = $_queryBuilder . '/v2/bookings/';
 
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
@@ -167,9 +167,9 @@ class BookingsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bookings/{uuid}/{status}';
+        $_queryBuilder = $_queryBuilder . '/v2/bookings/{uuid}/{status}';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -238,9 +238,9 @@ class BookingsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bookings/{uuid}';
+        $_queryBuilder = $_queryBuilder . '/v2/bookings/{uuid}';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -304,9 +304,9 @@ class BookingsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bookings/{bookingUuid}/vouchers';
+        $_queryBuilder = $_queryBuilder . '/v2/bookings/{bookingUuid}/vouchers';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
@@ -373,9 +373,9 @@ class BookingsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/bookings';
+        $_queryBuilder = $_queryBuilder . '/v2/bookings';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);

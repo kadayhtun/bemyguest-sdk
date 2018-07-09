@@ -39,7 +39,7 @@ class ProductsController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -105,9 +105,9 @@ class ProductsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/products';
+        $_queryBuilder = $_queryBuilder . '/v2/products';
 
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
@@ -195,9 +195,9 @@ class ProductsController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/products/{uuid}/';
+        $_queryBuilder = $_queryBuilder . '/v2/products/{uuid}/';
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (

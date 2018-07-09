@@ -38,7 +38,7 @@ class APIController extends BaseController
         if (null === static::$instance) {
             static::$instance = new static();
         }
-        
+
         return static::$instance;
     }
 
@@ -53,9 +53,9 @@ class APIController extends BaseController
 
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
-        
+
         //prepare query string for API call
-        $_queryBuilder = $_queryBuilder.'/v2/config';
+        $_queryBuilder = $_queryBuilder . '/v2/config';
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
