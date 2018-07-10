@@ -23,6 +23,10 @@ class ServiceProvider extends BaseProvider
         $this->publishes([
             $this->configPath() => config_path('bemyguest.php'),
         ], 'config');
+
+        if (! file_exists(config_path('bemyguest.php'))) {
+            copy($this->configPath(), config_path('bemyguest.php'));
+        }
     }
 
     /**
