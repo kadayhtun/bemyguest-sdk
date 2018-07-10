@@ -1,25 +1,24 @@
 {
-    "name": "apimatic/bemyguestapiv20",
+    "name": "chitminow/laravel-bmgv2",
     "type": "library",
-    "description": "The industry benchmark preferred by online travel agents, designed solely for Asia's attractions, tours and activities.",
+    "description": "BeMyGuest API v2 with laravel wrapper.",
     "keywords": ["BeMyGuest API v2.0","API","SDK"],
-    "homepage": "https://apimatic.io",
     "license": "MIT",
     "authors": [
         {
-            "name": "APIMatic SDK Generator",
-            "email": "support@apimatic.io",
-            "homepage": "https://apimatic.io",
+            "name": "Aung Chit min",
+            "email": "aungchitmin@owaytrip.com",
             "role": "API Tool"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.0.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
         "mashape/unirest-php": "~3.0.1",
-        "apimatic/jsonmapper": "~1.3.0"
+        "apimatic/jsonmapper": "~1.3.0",
+        "illuminate/support": "5.*"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",
@@ -30,9 +29,19 @@
             "BmgApiV2Lib\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BmgApiV2Lib\\ServiceProvider"
+            ]
+        },
+        "aliases": {
+            "BeMyGuest": "BmgApiV2Lib\\Facades\\BeMyGuest"
+        }
+    },
     "scripts": {
         "test": "phpunit",
         "sniff": "phpcs --report=summary --standard=PSR12 src/",
-        "beautify": "phpcbf --report=diff --standard=PSR12 src/ -vv"
+        "style": "phpcbf --report=diff --standard=PSR12 src/ -vv"
     }
 }
