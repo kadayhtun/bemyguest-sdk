@@ -21,7 +21,7 @@ class ServiceProvider extends BaseProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/bemyguest.php' => config_path('bemyguest.php'),
+            $this->configPath() => config_path('bemyguest.php'),
         ]);
     }
 
@@ -51,5 +51,10 @@ class ServiceProvider extends BaseProvider
     public function provides()
     {
         return ['bemyguest'];
+    }
+
+    protected function configPath()
+    {
+        return  __DIR__ . '/../config/bemyguest.php';
     }
 }
