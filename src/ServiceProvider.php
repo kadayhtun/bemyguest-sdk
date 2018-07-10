@@ -22,7 +22,7 @@ class ServiceProvider extends BaseProvider
     {
         $this->publishes([
             $this->configPath() => config_path('bemyguest.php'),
-        ]);
+        ], 'config');
     }
 
     /**
