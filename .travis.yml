@@ -1,0 +1,18 @@
+language: php
+
+sudo: false
+
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+
+branches:
+  only:
+      - master
+
+install: composer install
+
+script:
+  - composer sniff
+  - composer style
