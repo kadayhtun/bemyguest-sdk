@@ -38,10 +38,10 @@
         "laravel": {
             "providers": [
                 "BmgApiV2Lib\\ServiceProvider"
-            ]
-        },
-        "aliases": {
-            "BeMyGuest": "BmgApiV2Lib\\Facades\\BeMyGuest"
+            ],
+            "aliases": {
+                "BeMyGuest": "BmgApiV2Lib\\Facade"
+            }
         }
     },
     "scripts": {

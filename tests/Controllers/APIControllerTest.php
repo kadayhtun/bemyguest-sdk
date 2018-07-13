@@ -31,7 +31,7 @@ class APIControllerTest extends TestCase
     {
         parent::setUpBeforeClass();
 
-        self::$controller = self::$bmg->getClient();
+        self::$controller = self::$bmg->client();
     }
 
     /**

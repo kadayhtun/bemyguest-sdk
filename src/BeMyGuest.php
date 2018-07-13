@@ -2,8 +2,12 @@
 
 namespace BmgApiV2Lib;
 
-class BeMyGuest extends BmgApiV2Client
+use BadMethodCallException;
+
+class BeMyGuest
 {
+    protected $client;
+
     /**
      * Initialise with authentication and environment.
      *
@@ -16,6 +20,19 @@ class BeMyGuest extends BmgApiV2Client
     {
         Configuration::$environment = $environment ?? Environments::DEMO;
 
-        parent::__construct($xAuthorization);
+        $this->client = new BmgApiV2Client($xAuthorization);
+    }
+
+    public function __call($name, $arguments)
+    {
+        $method = substr($name, 0, 3) === 'get'
+            ? $name
+            : 'get' . ucfirst($name);
+
+        if (method_exists($this->client, $method)) {
+            return $this->client->$method();
+        }
+
+        throw new BadMethodCallException;
     }
 }
