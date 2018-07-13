@@ -29,6 +29,11 @@
             "BmgApiV2Lib\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "BmgApiV2Lib\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
