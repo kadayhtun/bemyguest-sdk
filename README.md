@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chitminow/laravel-bmgv2.svg?branch=master)](https://travis-ci.org/chitminow/laravel-bmgv2)
+
 # About
 
 [BeMyGuest](https://bemyguest.com.sg/) release their PHP SDK of their API version 1 on [Packagist](https://packagist.org/packages/bemyguest/sdk-php).
