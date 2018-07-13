@@ -43,12 +43,15 @@ class Configuration
      * A map of all baseurls used in different environments and servers
      * @var array
      */
-    private static $environmentsMap = array(
-        Environments::DEMO => array(
+    private static $environmentsMap = [
+        Environments::DEMO => [
             Servers::BMG => 'https://api.demo.bemyguest.com.sg',
-        ),
-        Environments::LIVE_PRODUCTION_ => array(
+        ],
+        Environments::LIVE_PRODUCTION_ => [
             Servers::BMG => 'https://api.bemyguest.com.sg',
-        ),
-    );
+        ],
+        Environments::ANONYMOUS => [
+            Servers::BMG => 'https://private-anon-a39178e256-bmglabsapi.apiary-mock.com',
+        ],
+    ];
 }
