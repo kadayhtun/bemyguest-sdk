@@ -33,6 +33,6 @@ class BeMyGuest
             return $this->client->$method();
         }
 
-        throw new BadMethodCallException;
+        throw new BadMethodCallException();
     }
 }
