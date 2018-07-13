@@ -47,6 +47,6 @@
     "scripts": {
         "test": "phpunit",
         "sniff": "phpcs --report=summary --standard=PSR12 src/",
-        "style": "phpcbf --report=diff --standard=PSR12 src/ -vv"
+        "style": "phpcbf --report=diff --standard=PSR12 src/"
     }
 }
