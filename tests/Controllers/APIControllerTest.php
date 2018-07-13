@@ -5,13 +5,12 @@
  * This file was automatically generated for bmg by APIMATIC v2.0 ( https://apimatic.io ).
  */
 
-namespace BmgApiV2Lib\Tests;
+namespace BmgApiV2Lib\Tests\Controllers;
 
 use BmgApiV2Lib\APIException;
-use BmgApiV2Lib\Exceptions;
-use BmgApiV2Lib\APIHelper;
-use BmgApiV2Lib\Models;
-use PHPUnit\Framework\TestCase;
+use BmgApiV2Lib\Tests\TestCase;
+use BmgApiV2Lib\Tests\TestHelper;
+use BmgApiV2Lib\Tests\HttpCallBackCatcher;
 
 class APIControllerTest extends TestCase
 {
@@ -30,8 +29,9 @@ class APIControllerTest extends TestCase
      */
     public static function setUpBeforeClass()
     {
-        $client = new \BmgApiV2Lib\BmgApiV2Client();
-        self::$controller = $client->getClient();
+        parent::setUpBeforeClass();
+
+        self::$controller = self::$bmg->getClient();
     }
 
     /**
