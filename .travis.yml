@@ -11,9 +11,15 @@ branches:
   only:
       - master
 
+before_install:
+  - ./build/tools/composer clear-cache
+
 install: composer install
 
 script:
-  - phpunit
+  - composer test
   - composer sniff
   - composer style
+
+notifications:
+  email: false
