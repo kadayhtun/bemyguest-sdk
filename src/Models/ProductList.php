@@ -25,7 +25,7 @@ class ProductList implements JsonSerializable
     /**
      * Date
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromRfc3339DateTime
+     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
      * @var \DateTime $updatedAt public property
      */
     public $updatedAt;
