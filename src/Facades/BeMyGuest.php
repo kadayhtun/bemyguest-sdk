@@ -1,14 +1,14 @@
 <?php
 
-namespace BmgApiV2Lib;
+namespace BmgApiV2Lib\Facades;
 
-use Illuminate\Support\Facades\Facade as BaseFacade;
+use Illuminate\Support\Facades\Facade;
 
-class Facade extends BaseFacade
+class BeMyGuest extends Facade
 {
     /**
      * Get the registered name of the component.
-     * @see \BmgApiV2Lib\VBmgApiV2Client
+     * @see \BmgApiV2Lib\BmgApiV2Client
      * @return string
      */
     protected static function getFacadeAccessor()
