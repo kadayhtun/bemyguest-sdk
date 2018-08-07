@@ -14,9 +14,7 @@ branches:
 install: composer install
 
 script:
-  - composer test
-  - composer sniff
-  - composer style
+  - composer qc
 
 notifications:
   email: false
