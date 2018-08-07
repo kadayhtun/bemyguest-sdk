@@ -59,5 +59,30 @@ class ProductsControllerTest extends TestCase
             $this->httpResponse->getResponse()->getStatusCode(),
             "Status is not 200"
         );
+
+        return $result;
+    }
+
+    /**
+     * @depends testGetProductList
+     */
+    public function testGetProductDetails()
+    {
+        $products = func_get_arg(0);
+
+        $result = null;
+        self::$controller->setHttpCallBack($this->httpResponse);
+
+         try {
+            $result = self::$controller->getProductDetails($products->data[0]->uuid);
+        } catch (APIException $e) {
+        }
+
+        // Test response code
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
     }
 }
