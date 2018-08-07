@@ -2,9 +2,9 @@
 
 namespace BmgApiV2Lib\Utils;
 
-use \DateTime;
-use \DateTimeZone;
-use \Exception;
+use DateTime;
+use DateTimeZone;
+use Exception;
 use BmgApiV2Lib\APIHelper;
 
 class DateTimeHelper
@@ -273,7 +273,7 @@ class DateTimeHelper
     */
     public static function toUnixTimestampArray($datetimes)
     {
-       if (! $datetimes) {
+        if (! $datetimes) {
             return null;
         }
 
