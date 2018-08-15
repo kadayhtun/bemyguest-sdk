@@ -12,7 +12,7 @@ class TestCase extends BaseTestCase
 
     public static function setUpBeforeClass()
     {
-        $key = getenv('BE_MY_GUEST_KEY') ?: null;
+        $key = getenv('BE_MY_GUEST_KEY', true) ?: getenv('BE_MY_GUEST_KEY');
         $env = $key ? Environments::DEMO : Environments::ANONYMOUS;
 
         self::$bmg = new BeMyGuest($key, $env);
