@@ -17,13 +17,13 @@ class GetProductTypesForProduct implements JsonSerializable
     /**
      * @todo Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\ProductTypesForProduct $data public property
+     * @var \BmgApiV2Lib\Models\ProductTypesForProduct[] $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param ProductTypesForProduct $data Initialization value for $this->data
+     * @param array $data Initialization value for $this->data
      */
     public function __construct()
     {
