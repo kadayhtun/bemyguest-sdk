@@ -7,6 +7,7 @@
 
 namespace BmgApiV2Lib\Tests\Controllers;
 
+use DateTime;
 use BmgApiV2Lib\APIException;
 use BmgApiV2Lib\Tests\TestCase;
 use BmgApiV2Lib\Tests\TestHelper;
@@ -72,5 +73,74 @@ class ProductTypesControllerTest extends TestCase
         );
 
         return $result;
+    }
+
+    /**
+     * @depends testGetProductTypesForProduct
+     */
+    public function testGetProductTypeDetails()
+    {
+        $type = current(func_get_arg(0)->data);
+
+        // Set callback and perform API call
+        self::$controller->setHttpCallBack($this->httpResponse);
+
+        $result = self::$controller->getProductTypeDetails($type->uuid);
+
+        // Test response code
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
+
+        return $result->data;
+    }
+
+    /**
+     * @depends testGetProductTypeDetails
+     */
+    public function testGetCheckAvailabilityAndPrice()
+    {
+        $type = func_get_arg(0);
+
+        // Set callback and perform API call
+        self::$controller->setHttpCallBack($this->httpResponse);
+
+        $result = self::$controller->getCheckAvailabilityAndPrice(
+            $type->uuid,
+            (new DateTime())->format('Y-m-d')
+        );
+
+        // Test response code
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
+    }
+
+    /**
+     * @depends testGetProductTypesForProduct
+     */
+    public function testGetPrices()
+    {
+        $type = current(func_get_arg(0)->data);
+
+        // Set callback and perform API call
+        self::$controller->setHttpCallBack($this->httpResponse);
+
+        $result = self::$controller->getPrices(
+            $type->uuid,
+            "2018-08-18",
+            "2018-08-19"
+        );
+
+        // Test response code
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
     }
 }

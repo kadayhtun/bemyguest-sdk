@@ -12,12 +12,12 @@ use JsonSerializable;
 /**
  * @todo Write general description for this model
  */
-class CheckAvailabilityAndPriceResponse implements JsonSerializable
+class ProductTypePriceLists implements JsonSerializable
 {
     /**
-     * Data object
+     * @todo Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\PriceList $data public property
+     * @var \BmgApiV2Lib\Models\PriceList[] $data public property
      */
     public $data;
 
