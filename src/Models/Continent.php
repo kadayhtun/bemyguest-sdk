@@ -4,7 +4,7 @@ namespace BmgApiV2Lib\Models;
 
 use JsonSerializable;
 
-class Location implements JsonSerializable
+class Continent implements JsonSerializable
 {
     /**
      * @var string $continent
@@ -36,7 +36,7 @@ class Location implements JsonSerializable
     public function __construct()
     {
         if (4 == func_num_args()) {
-            $this->name = func_get_arg(0);
+            $this->continent = func_get_arg(0);
             $this->code = func_get_arg(1);
             $this->uuid = func_get_arg(2);
             $this->countries = func_get_arg(3);
@@ -52,7 +52,7 @@ class Location implements JsonSerializable
     public function jsonSerialize()
     {
         $json = [];
-        $json['name'] = $this->name;
+        $json['continent'] = $this->continent;
         $json['code'] = $this->code;
         $json['uuid'] = $this->uuid;
         $json['countries'] = $this->countries;

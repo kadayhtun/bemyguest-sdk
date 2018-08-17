@@ -4,7 +4,7 @@ namespace BmgApiV2Lib\Tests\Feature;
 
 use BmgApiV2Lib\Models\City;
 use BmgApiV2Lib\Tests\TestCase;
-use BmgApiV2Lib\Models\Location;
+use BmgApiV2Lib\Models\Continent;
 use BmgApiV2Lib\Models\Countries;
 
 class LocationFromConfigTest extends TestCase
@@ -25,7 +25,7 @@ class LocationFromConfigTest extends TestCase
     public function testLocationsDataContainsLocationAsItem()
     {
         $this->assertContainsOnlyInstancesOf(
-            Location::class,
+            Continent::class,
             self::$locations->data
         );
     }
@@ -44,10 +44,16 @@ class LocationFromConfigTest extends TestCase
     {
         // remainder: city may not have
         // in the locations in real-world
-        $city = self::$locations
-            ->data[0]
+        $asia = array_filter(
+            self::$locations->data,
+            function ($loc) {
+                return $loc->continent === 'Asia';
+            }
+        );
+
+        $city = current($asia)
             ->countries
-            ->data[0]
+            ->data[0] // UAE
             ->states
             ->data[0]
             ->cities

@@ -7,7 +7,7 @@ use JsonSerializable;
 class Locations implements JsonSerializable
 {
     /**
-     * @var \BmgApiV2Lib\Models\Location[] $data
+     * @var \BmgApiV2Lib\Models\Continent[] $data
      */
     public $data;
 
