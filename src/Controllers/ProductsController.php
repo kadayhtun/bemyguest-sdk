@@ -109,8 +109,7 @@ class ProductsController extends BaseController
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder . '/v2/products';
 
-        //process optional query parameters
-        APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
+        $parameters = [
             'country'           => $country,
             'city'              => $city,
             'price_min'         => $priceMin,
@@ -134,7 +133,14 @@ class ProductsController extends BaseController
             'latitude'          => $latitude,
             'longitude'         => $longitude,
             'distance'          => $distance,
-        ));
+        ];
+
+        if (count($args = func_get_args()) && is_array($args[0])) {
+            $parameters = $args[0];
+        }
+
+        //process optional query parameters
+        APIHelper::appendUrlWithQueryParameters($_queryBuilder, $parameters);
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -204,12 +210,18 @@ class ProductsController extends BaseController
             'uuid'     => $uuid,
             ));
 
-        //process optional query parameters
-        APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
+        $parameters = [
             'currency' => $currency,
             'language' => $language,
             'fields'   => $fields,
-        ));
+        ];
+
+        if (count($args = func_get_args()) === 2 && is_array($args[1])) {
+            $parameters = $args[1];
+        }
+
+        //process optional query parameters
+        APIHelper::appendUrlWithQueryParameters($_queryBuilder, $parameters);
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);

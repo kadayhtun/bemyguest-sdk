@@ -8,8 +8,10 @@
 namespace BmgApiV2Lib\Tests\Controllers;
 
 use BmgApiV2Lib\APIException;
+use BmgApiV2Lib\BmgApiV2Client;
 use BmgApiV2Lib\Tests\TestCase;
 use BmgApiV2Lib\Tests\TestHelper;
+use BmgApiV2Lib\Utils\LocationResolver;
 use BmgApiV2Lib\Tests\HttpCallBackCatcher;
 
 class ProductsControllerTest extends TestCase
@@ -48,10 +50,7 @@ class ProductsControllerTest extends TestCase
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
 
-         try {
-            $result = self::$controller->getProductList();
-        } catch (APIException $e) {
-        }
+        $result = self::$controller->getProductList();
 
         // Test response code
         $this->assertEquals(
@@ -61,6 +60,27 @@ class ProductsControllerTest extends TestCase
         );
 
         return $result;
+    }
+
+    public function testGetProductListWithParams()
+    {
+        $locations = (new BmgApiV2Client)
+            ->getClient()
+            ->getConfig()
+            ->data
+            ->locations
+            ->data;
+
+        $cities = LocationResolver::resolve($locations, 'cities');
+
+        self::$controller->setHttpCallBack($this->httpResponse);
+        self::$controller->getProductList(['city' => $cities[0]->uuid]);
+
+        $this->assertEquals(
+            200,
+            $this->httpResponse->getResponse()->getStatusCode(),
+            "Status is not 200"
+        );
     }
 
     /**
