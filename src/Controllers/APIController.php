@@ -45,10 +45,11 @@ class APIController extends BaseController
     /**
      * Config object with location, timezones, base URL for images and many more.
      *
+     * @param string $fields (optional) coma separated list of keys (fields) to be returned
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
-    public function getConfig()
+    public function getConfig($fields = null)
     {
 
         //the base uri for api requests
@@ -56,6 +57,16 @@ class APIController extends BaseController
 
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder . '/v2/config';
+
+        if ($fields && is_string($fields)) {
+
+            //process optional query parameters
+            APIHelper::appendUrlWithQueryParameters(
+                $_queryBuilder,
+                ['fields' => $fields]
+            );
+        }
+
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
