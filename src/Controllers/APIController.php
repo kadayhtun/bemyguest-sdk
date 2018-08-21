@@ -59,7 +59,6 @@ class APIController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/config';
 
         if ($fields && is_string($fields)) {
-
             //process optional query parameters
             APIHelper::appendUrlWithQueryParameters(
                 $_queryBuilder,
