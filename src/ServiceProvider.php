@@ -39,9 +39,9 @@ class ServiceProvider extends BaseProvider
         $this->mergeConfigFrom($this->configPath(), 'bemyguest');
 
         $this->app->singleton('bemyguest', function ($app) {
-            $env = $app->environment('local')
-                ? Environments::DEMO
-                : Environments::LIVE_PRODUCTION_;
+            $env = $app->environment('production')
+                ? Environments::LIVE_PRODUCTION_
+                : Environments::DEMO;
 
             return new BeMyGuest($app['config']['bemyguest']['key'], $env);
         });

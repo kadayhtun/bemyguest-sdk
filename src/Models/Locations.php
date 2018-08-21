@@ -1,23 +1,13 @@
 <?php
-/*
- * BmgApiV2
- *
- * This file was automatically generated for bmg by APIMATIC v2.0 ( https://apimatic.io ).
- */
 
 namespace BmgApiV2Lib\Models;
 
 use JsonSerializable;
 
-/**
- * @todo Write general description for this model
- */
-class GetProductTypesForProduct implements JsonSerializable
+class Locations implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
-     * @required
-     * @var \BmgApiV2Lib\Models\ProductTypesForProduct[] $data public property
+     * @var \BmgApiV2Lib\Models\Continent[] $data
      */
     public $data;
 
@@ -35,6 +25,8 @@ class GetProductTypesForProduct implements JsonSerializable
 
     /**
      * Encode this object to JSON
+     *
+     * @return array
      */
     public function jsonSerialize()
     {

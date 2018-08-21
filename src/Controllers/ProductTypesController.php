@@ -7,18 +7,19 @@
 
 namespace BmgApiV2Lib\Controllers;
 
-use BmgApiV2Lib\APIException;
-use BmgApiV2Lib\APIHelper;
-use BmgApiV2Lib\Configuration;
+use DateTime;
+use Unirest\Request;
 use BmgApiV2Lib\Models;
+use BmgApiV2Lib\Servers;
+use BmgApiV2Lib\APIHelper;
 use BmgApiV2Lib\Exceptions;
-use BmgApiV2Lib\Utils\DateTimeHelper;
-use BmgApiV2Lib\Http\HttpRequest;
-use BmgApiV2Lib\Http\HttpResponse;
+use BmgApiV2Lib\APIException;
+use BmgApiV2Lib\Configuration;
 use BmgApiV2Lib\Http\HttpMethod;
 use BmgApiV2Lib\Http\HttpContext;
-use BmgApiV2Lib\Servers;
-use Unirest\Request;
+use BmgApiV2Lib\Http\HttpRequest;
+use BmgApiV2Lib\Http\HttpResponse;
+use BmgApiV2Lib\Utils\DateTimeHelper;
 
 /**
  * @todo Add a general description for this controller.
@@ -48,9 +49,9 @@ class ProductTypesController extends BaseController
      * creating a booking we advise to run this request first.
      *
      * @param string   $uuid UUID of product type
-     * @param DateTime $date Date YYYY-MM-DD
+     * @param \DateTime $date Date YYYY-MM-DD
      * @return mixed response from the API call
-     * @throws APIException Thrown if API call fails
+     * @throws \APIException Thrown if API call fails
      */
     public function getCheckAvailabilityAndPrice(
         $uuid,
@@ -66,7 +67,7 @@ class ProductTypesController extends BaseController
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
             'uuid' => $uuid,
-            'date' => DateTimeHelper::toSimpleDate($date),
+            'date' => DateTimeHelper::toSimpleDate(new DateTime($date)),
             ));
 
         //validate and preprocess url
@@ -265,11 +266,11 @@ class ProductTypesController extends BaseController
      * Get product type pricing using its UUID as the parameter.
      *
      * @param string   $uuid       UUID of product type
-     * @param DateTime $dateStart  (optional) Start date for pricing list
-     * @param DateTime $dateEnd    (optional) End date for pricing list
+     * @param \DateTime $dateStart  (optional) Start date for pricing list
+     * @param \DateTime $dateEnd    (optional) End date for pricing list
      * @param string   $language   (optional) UUID of language
      * @return mixed response from the API call
-     * @throws APIException Thrown if API call fails
+     * @throws \APIException Thrown if API call fails
      */
     public function getPrices(
         $uuid,
@@ -291,8 +292,8 @@ class ProductTypesController extends BaseController
 
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
-            'date_start' => DateTimeHelper::toSimpleDate($dateStart),
-            'date_end'   => DateTimeHelper::toSimpleDate($dateEnd),
+            'date_start' => DateTimeHelper::toSimpleDate(new DateTime($dateStart)),
+            'date_end'   => DateTimeHelper::toSimpleDate(new DateTime($dateEnd)),
             'language'   => $language,
         ));
 
@@ -343,6 +344,8 @@ class ProductTypesController extends BaseController
         //handle errors defined at the API level
         $this->validateResponse($_httpResponse, $_httpContext);
 
-        return $response->body;
+        $mapper = $this->getJsonMapper();
+
+        return $mapper->mapClass($response->body, 'BmgApiV2Lib\\Models\\ProductTypePriceLists');
     }
 }

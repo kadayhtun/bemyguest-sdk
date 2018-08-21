@@ -12,18 +12,18 @@ use JsonSerializable;
 /**
  * @todo Write general description for this model
  */
-class GetProductTypesForProduct implements JsonSerializable
+class ProductTypePriceLists implements JsonSerializable
 {
     /**
      * @todo Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\ProductTypesForProduct[] $data public property
+     * @var \BmgApiV2Lib\Models\PriceList[] $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param array $data Initialization value for $this->data
+     * @param object $data Initialization value for $this->data
      */
     public function __construct()
     {

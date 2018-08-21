@@ -17,7 +17,7 @@ class CheckAvailabilityAndPriceResponse implements JsonSerializable
     /**
      * Data object
      * @required
-     * @var object $data public property
+     * @var \BmgApiV2Lib\Models\PriceList $data public property
      */
     public $data;
 

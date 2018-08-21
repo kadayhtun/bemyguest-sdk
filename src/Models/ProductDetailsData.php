@@ -25,7 +25,7 @@ class ProductDetailsData implements JsonSerializable
     /**
      * @todo Write general description for this property
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromRfc3339DateTime
+     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
      * @var \DateTime $updatedAt public property
      */
     public $updatedAt;

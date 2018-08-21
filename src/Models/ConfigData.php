@@ -87,7 +87,7 @@ class ConfigData implements JsonSerializable
     /**
      * Locations object
      * @required
-     * @var \BmgApiV2Lib\Models\LocationStruct $locations public property
+     * @var \BmgApiV2Lib\Models\Locations $locations public property
      */
     public $locations;
 
@@ -117,7 +117,7 @@ class ConfigData implements JsonSerializable
      * @param Currencies     $currencies        Initialization value for $this->currencies
      * @param AcitivityTypes $types             Initialization value for $this->types
      * @param Categories     $categories        Initialization value for $this->categories
-     * @param LocationStruct $locations         Initialization value for $this->locations
+     * @param Locations $locations         Initialization value for $this->locations
      * @param array          $optionInputTypes  Initialization value for $this->optionInputTypes
      * @param array          $links             Initialization value for $this->links
      */

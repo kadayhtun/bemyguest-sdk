@@ -8,7 +8,7 @@
         {
             "name": "Aung Chit min",
             "email": "aungchitmin@owaytrip.com",
-            "role": "API Tool"
+            "role": "API Dev"
         }
     ],
     "require": {
@@ -40,7 +40,7 @@
                 "BmgApiV2Lib\\ServiceProvider"
             ],
             "aliases": {
-                "BeMyGuest": "BmgApiV2Lib\\Facade"
+                "BeMyGuest": "BmgApiV2Lib\\Facades\\BeMyGuest"
             }
         }
     },

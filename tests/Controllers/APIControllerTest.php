@@ -20,7 +20,7 @@ class APIControllerTest extends TestCase
     protected static $controller;
 
     /**
-     * @var HttpCallBackCatcher Callback
+     * @var \BmgApiV2Lib\Tests\HttpCallBackCatcher Callback
      */
     protected $httpResponse;
 
