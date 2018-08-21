@@ -290,12 +290,18 @@ class ProductTypesController extends BaseController
             'uuid'       => $uuid,
             ));
 
-        //process optional query parameters
-        APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
+        $parameters = [
             'date_start' => DateTimeHelper::toSimpleDate(new DateTime($dateStart)),
             'date_end'   => DateTimeHelper::toSimpleDate(new DateTime($dateEnd)),
-            'language'   => $language,
-        ));
+            'language'   => $language
+        ];
+
+        if (count($args = func_get_args()) === 2 && is_array($args[1])) {
+            $parameters = $args[1];
+        }
+
+        //process optional query parameters
+        APIHelper::appendUrlWithQueryParameters($_queryBuilder, $parameters);
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);

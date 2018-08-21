@@ -132,8 +132,8 @@ class ProductTypesControllerTest extends TestCase
 
         $result = self::$controller->getPrices(
             $type->uuid,
-            "2018-08-18",
-            "2018-08-19"
+            (new DateTime)->format('Y-m-d'),
+            (new DateTime('+1 day'))->format('Y-m-d')
         );
 
         // Test response code
