@@ -17,7 +17,7 @@ class PriceDetails implements JsonSerializable
     /**
      * @todo Write general description for this property
      * @required
-     * @var array $adults public property
+     * @var object $adults public property
      */
     public $adults;
 
