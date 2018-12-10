@@ -10,26 +10,29 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
- *City details
+ * City details
  */
 class City implements JsonSerializable
 {
     /**
      * City name
+     *
      * @required
-     * @var string $name public property
+     * @var      string $name public property
      */
     public $name;
 
     /**
      * City UUID
+     *
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $name Initialization value for $this->name
      * @param string $uuid Initialization value for $this->uuid
      */

@@ -11,91 +11,103 @@ use JsonSerializable;
 use BmgApiV2Lib\Utils\DateTimeHelper;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class CreateABookingRequest implements JsonSerializable
 {
     /**
      * UUID of product type
+     *
      * @required
-     * @var string $productTypeUuid public property
+     * @var      string $productTypeUuid public property
      */
     public $productTypeUuid;
 
     /**
      * Booking person contact data
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\BookingCustomerContactData $customer public property
+     * @var      \BmgApiV2Lib\Models\BookingCustomerContactData $customer public property
      */
     public $customer;
 
     /**
      * Number of adults, can be 0 when minPax = 0
+     *
      * @required
-     * @var integer $adults public property
+     * @var      integer $adults public property
      */
     public $adults;
 
     /**
      * Number of children
+     *
      * @required
-     * @var integer $children public property
+     * @var      integer $children public property
      */
     public $children;
 
     /**
      * Number of seniors
+     *
      * @required
-     * @var integer $seniors public property
+     * @var      integer $seniors public property
      */
     public $seniors;
 
     /**
      * Date
+     *
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
-     * @var \DateTime $arrivalDate public property
+     * @factory  \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
+     * @var      \DateTime $arrivalDate public property
      */
     public $arrivalDate;
 
     /**
      * Your own id of booking
+     *
      * @required
-     * @var string $partnerReference public property
+     * @var      string $partnerReference public property
      */
     public $partnerReference;
 
     /**
      * Booking options, please refer to booking options docs page
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\BookingOptionsEmptyObject[] $options public property
+     * @var      \BmgApiV2Lib\Models\BookingOptionsEmptyObject[] $options public property
      */
     public $options;
 
     /**
      * message to host
+     *
      * @var string|null $message public property
      */
     public $message;
 
     /**
      * UUID of timeslot. If timeslots provided.
+     *
      * @var string|null $timeSlotUuid public property
      */
     public $timeSlotUuid;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string                      $productTypeUuid  Initialization value for $this->productTypeUuid
-     * @param BookingCustomerContactData  $customer         Initialization value for $this->customer
-     * @param integer                     $adults           Initialization value for $this->adults
-     * @param integer                     $children         Initialization value for $this->children
-     * @param integer                     $seniors          Initialization value for $this->seniors
-     * @param \DateTime                   $arrivalDate      Initialization value for $this->arrivalDate
-     * @param string                      $partnerReference Initialization value for $this->partnerReference
-     * @param array                       $options          Initialization value for $this->options
-     * @param string                      $message          Initialization value for $this->message
-     * @param string                      $timeSlotUuid     Initialization value for $this->timeSlotUuid
+     *
+     * @param string                     $productTypeUuid  Initialization value for $this->productTypeUuid
+     * @param BookingCustomerContactData $customer         Initialization value for $this->customer
+     * @param integer                    $adults           Initialization value for $this->adults
+     * @param integer                    $children         Initialization value for $this->children
+     * @param integer                    $seniors          Initialization value for $this->seniors
+     * @param \DateTime                  $arrivalDate      Initialization value for $this->arrivalDate
+     * @param string                     $partnerReference Initialization value for $this->partnerReference
+     * @param array                      $options          Initialization value for $this->options
+     * @param string                     $message          Initialization value for $this->message
+     * @param string                     $timeSlotUuid     Initialization value for $this->timeSlotUuid
      */
     public function __construct()
     {

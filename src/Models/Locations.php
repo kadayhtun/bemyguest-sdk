@@ -7,12 +7,14 @@ use JsonSerializable;
 class Locations implements JsonSerializable
 {
     /**
+     *
      * @var \BmgApiV2Lib\Models\Continent[] $data
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array $data Initialization value for $this->data
      */
     public function __construct()

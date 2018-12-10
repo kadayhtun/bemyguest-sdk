@@ -10,34 +10,39 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class Now implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $date public property
+     * @var      string $date public property
      */
     public $date;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps timezone_type
-     * @var integer $timezoneType public property
+     * @maps     timezone_type
+     * @var      integer $timezoneType public property
      */
     public $timezoneType;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $timezone public property
+     * @var      string $timezone public property
      */
     public $timezone;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string  $date         Initialization value for $this->date
      * @param integer $timezoneType Initialization value for $this->timezoneType
      * @param string  $timezone     Initialization value for $this->timezone

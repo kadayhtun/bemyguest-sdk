@@ -10,19 +10,22 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class CheckAvailabilityAndPriceResponse implements JsonSerializable
 {
     /**
      * Data object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\PriceList $data public property
+     * @var      \BmgApiV2Lib\Models\PriceList $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param object $data Initialization value for $this->data
      */
     public function __construct()

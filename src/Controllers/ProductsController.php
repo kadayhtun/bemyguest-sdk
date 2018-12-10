@@ -21,17 +21,20 @@ use BmgApiV2Lib\Servers;
 use Unirest\Request;
 
 /**
+ *
  * @todo Add a general description for this controller.
  */
 class ProductsController extends BaseController
 {
     /**
+     *
      * @var ProductsController The reference to *Singleton* instance of this class
      */
     private static $instance;
 
     /**
      * Returns the *Singleton* instance of this class.
+     *
      * @return ProductsController The *Singleton* instance.
      */
     public static function getInstance()
@@ -46,34 +49,34 @@ class ProductsController extends BaseController
     /**
      * List of available products.
      *
-     * @param string   $country           (optional) UUID of country
-     * @param string   $city              (optional) UUID of city, it will always overwrite country parameter if
-     *                                    provided
-     * @param integer  $priceMin          (optional) minimal price in decimal format 000.00 - it's compared to base
-     *                                    price
-     * @param integer  $priceMax          (optional) max price in decimal format 000.00
-     * @param string   $category          (optional) UUID of litsing category
-     * @param integer  $pax               (optional) number of people
-     * @param string   $language          (optional) language UUID, also language code may be provided. It will
-     *                                    overwrite the default language from user account
-     * @param DateTime $dateStart         (optional) product start date, format YYYY-MM-DD
-     * @param DateTime $dateEnd           (optional) product end date, format YYYY-MM-DD
-     * @param string   $query             (optional) free phrase for text search for example &query=Bali
-     * @param integer  $durationDaysMin   (optional) product duration minimum days (default 0)
-     * @param integer  $durationDaysMax   (optional) product duration maximum days (default NULL)
-     * @param string   $sort              (optional) sorting field, example: &sort=date,-price  or &sort=price
-     * @param double   $page              (optional) page number for results
-     * @param double   $perPage           (optional) how many results per page - if not provided default value from
-     *                                    user account will be used
-     * @param string   $published         (optional) default is always set to `true`
-     * @param string   $deleted           (optional) default is set to `false`
-     * @param string   $fields            (optional) coma separated list of keys (fields) to be returned
-     * @param string   $currency          (optional) UUID of currency
-     * @param string   $updatedAfter      (optional) Date YYYY-MM-DD
-     * @param string   $latitude          (optional) Latitude
-     * @param string   $longitude         (optional) Longitude
-     * @param string   $distance          (optional) Distance ascending (works only if latitude,longitude & distance
-     *                                    parameters are provided, ignored otherwise)
+     * @param  string   $country         (optional) UUID of country
+     * @param  string   $city            (optional) UUID of city, it will always overwrite country parameter if
+     *                                   provided
+     * @param  integer  $priceMin        (optional) minimal price in decimal format 000.00 - it's compared to base
+     *                                   price
+     * @param  integer  $priceMax        (optional) max price in decimal format 000.00
+     * @param  string   $category        (optional) UUID of litsing category
+     * @param  integer  $pax             (optional) number of people
+     * @param  string   $language        (optional) language UUID, also language code may be provided. It will
+     *                                   overwrite the default language from user account
+     * @param  DateTime $dateStart       (optional) product start date, format YYYY-MM-DD
+     * @param  DateTime $dateEnd         (optional) product end date, format YYYY-MM-DD
+     * @param  string   $query           (optional) free phrase for text search for example &query=Bali
+     * @param  integer  $durationDaysMin (optional) product duration minimum days (default 0)
+     * @param  integer  $durationDaysMax (optional) product duration maximum days (default NULL)
+     * @param  string   $sort            (optional) sorting field, example: &sort=date,-price  or &sort=price
+     * @param  double   $page            (optional) page number for results
+     * @param  double   $perPage         (optional) how many results per page - if not provided default value from
+     *                                   user account will be used
+     * @param  string   $published       (optional) default is always set to `true`
+     * @param  string   $deleted         (optional) default is set to `false`
+     * @param  string   $fields          (optional) coma separated list of keys (fields) to be returned
+     * @param  string   $currency        (optional) UUID of currency
+     * @param  string   $updatedAfter    (optional) Date YYYY-MM-DD
+     * @param  string   $latitude        (optional) Latitude
+     * @param  string   $longitude       (optional) Longitude
+     * @param  string   $distance        (optional) Distance ascending (works only if latitude,longitude & distance
+     *                                   parameters are provided, ignored otherwise)
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -185,10 +188,10 @@ class ProductsController extends BaseController
     /**
      * Get information about the product using its UUID as a parameter.
      *
-     * @param string $uuid     UUID of product
-     * @param string $currency (optional) currency UUID, also currency code may be provided in exchange
-     * @param string $language (optional) language UUID, also language code may be provided
-     * @param string $fields   (optional) comma separated list of fields to retrive
+     * @param  string $uuid     UUID of product
+     * @param  string $currency (optional) currency UUID, also currency code may be provided in exchange
+     * @param  string $language (optional) language UUID, also language code may be provided
+     * @param  string $fields   (optional) comma separated list of fields to retrive
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -206,9 +209,12 @@ class ProductsController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/products/{uuid}/';
 
         //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters(
+            $_queryBuilder,
+            array (
             'uuid'     => $uuid,
-            ));
+            )
+        );
 
         $parameters = [
             'currency' => $currency,

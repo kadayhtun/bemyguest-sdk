@@ -16,11 +16,12 @@ use JsonSerializable;
 class APIHelper
 {
     /**
-    * Replaces template parameters in the given url
-    * @param    string  $url         The query string builder to replace the template parameters
-    * @param    array   $parameters  The parameters to replace in the url
-    * @return   string  The processed url
-    */
+     * Replaces template parameters in the given url
+     *
+     * @param  string $url        The query string builder to replace the template parameters
+     * @param  array  $parameters The parameters to replace in the url
+     * @return string  The processed url
+     */
     public static function appendUrlWithTemplateParameters($url, $parameters)
     {
         //perform parameter validation
@@ -53,11 +54,12 @@ class APIHelper
     }
 
     /**
-    * Appends the given set of parameters to the given query string
-    * @param    string  $queryBuilder   The query url string to append the parameters
-    * @param    array   $parameters     The parameters to append
-    * @return   void
-    */
+     * Appends the given set of parameters to the given query string
+     *
+     * @param  string $queryBuilder The query url string to append the parameters
+     * @param  array  $parameters   The parameters to append
+     * @return void
+     */
     public static function appendUrlWithQueryParameters(&$queryBuilder, $parameters)
     {
         //perform parameter validation
@@ -78,9 +80,11 @@ class APIHelper
     }
 
     /**
-    * Validates and processes the given Url
-    * @param    string  $url The given Url to process
-    * @return   string       Pre-processed Url as string */
+     * Validates and processes the given Url
+     *
+     * @param  string $url The given Url to process
+     * @return string       Pre-processed Url as string
+     */
     public static function cleanUrl($url)
     {
         //perform parameter validation
@@ -105,9 +109,10 @@ class APIHelper
 
     /**
      * Deserialize a Json string
-     * @param  string   $json       A valid Json string
-     * @param  mixed    $instance   Instance of an object to map the json into
-     * @param  boolean  $isArray    Is the Json an object array?
+     *
+     * @param  string  $json     A valid Json string
+     * @param  mixed   $instance Instance of an object to map the json into
+     * @param  boolean $isArray  Is the Json an object array?
      * @return mixed                Decoded Json
      */
     public static function deserialize($json, $instance = null, $isArray = false)
@@ -126,7 +131,8 @@ class APIHelper
 
     /**
      * Check if an array isAssociative (has string keys)
-     * @param  array  $array  A valid array
+     *
+     * @param  array $array A valid array
      * @return boolean        True if the array is Associative, false if it is Indexed
      */
     private static function isAssociative($arr)
@@ -142,7 +148,8 @@ class APIHelper
 
     /**
      * Prepare a model for form encoding
-     * @param  JsonSerializable  $model  A valid instance of JsonSerializable
+     *
+     * @param  JsonSerializable $model A valid instance of JsonSerializable
      * @return array                     The model as a map of key value pairs
      */
     public static function prepareFormFields($model)
@@ -156,8 +163,9 @@ class APIHelper
         foreach ($model as $key => $value) {
             if ($value instanceof JsonSerializable) {
                 $arr[$key] = static::prepareFormFields($model->$key);
-            } elseif (is_array($value) && !empty($value) && !static::isAssociative($value) &&
-                $value[0] instanceof JsonSerializable) {
+            } elseif (is_array($value) && !empty($value) && !static::isAssociative($value)
+                && $value[0] instanceof JsonSerializable
+            ) {
                 $temp = array();
                 foreach ($value as $k => $v) {
                     $temp[$k] = static::prepareFormFields($v);

@@ -23,12 +23,13 @@ class TestHelper
 {
     /**
      * Recursively check whether the leftTree is a proper subset of the right tree
-     * @param   array   $leftTree       Left tree
-     * @param   array   $rightTree      Right tree
-     * @param   boolean $checkValues    Check primitive values for equality?
-     * @param   boolean $allowExtra     Are extra elements allowed in right array?
-     * @param   boolean $isOrdered      Should elements in right be compared in order to left?
-     * @return  boolean                 True if leftTree is a subset of rightTree
+     *
+     * @param  array   $leftTree    Left tree
+     * @param  array   $rightTree   Right tree
+     * @param  boolean $checkValues Check primitive values for equality?
+     * @param  boolean $allowExtra  Are extra elements allowed in right array?
+     * @param  boolean $isOrdered   Should elements in right be compared in order to left?
+     * @return boolean                 True if leftTree is a subset of rightTree
      */
     public static function isProperSubsetOf(
         array $leftTree = null,
@@ -60,7 +61,8 @@ class TestHelper
                         $checkValues,
                         $allowExtra,
                         $isOrdered
-                    )) {
+                    )
+                    ) {
                         return false;
                     }
                 } else {
@@ -81,7 +83,8 @@ class TestHelper
                                 $checkValues,
                                 $allowExtra,
                                 $isOrdered
-                            )) {
+                            )
+                            ) {
                                 return false;
                             }
                         } else {
@@ -90,7 +93,8 @@ class TestHelper
                                 $rightVal,
                                 $allowExtra,
                                 $isOrdered
-                            )) {
+                            )
+                            ) {
                                 return false;
                             }
                         }
@@ -105,12 +109,13 @@ class TestHelper
     
     /**
      * Recursively check whether the left JSON object is a proper subset of the right JSON object
-     * @param   array   $leftObject     Left JSON object as string
-     * @param   array   $rightObject    Right JSON object as string
-     * @param   boolean $checkValues    Check primitive values for equality?
-     * @param   boolean $allowExtra     Are extra elements allowed in right array?
-     * @param   boolean $isOrdered      Should elements in right be compared in order to left?
-     * @return  boolean                 If Json object is a subset
+     *
+     * @param  array   $leftObject  Left JSON object as string
+     * @param  array   $rightObject Right JSON object as string
+     * @param  boolean $checkValues Check primitive values for equality?
+     * @param  boolean $allowExtra  Are extra elements allowed in right array?
+     * @param  boolean $isOrdered   Should elements in right be compared in order to left?
+     * @return boolean                 If Json object is a subset
      */
     public static function isJsonObjectProperSubsetOf(
         $leftObject,
@@ -131,12 +136,13 @@ class TestHelper
     
     /**
      * Check if left array of objects is a subset of right array
-     * @param   array   $leftObject     Left array as a JSON string
-     * @param   array   $rightObject    Right array as a JSON string
-     * @param   boolean $checkValues    Check primitive values for equality?
-     * @param   boolean $allowExtra     Are extra elements allowed in right array?
-     * @param   boolean $isOrdered      Should elements in right be compared in order to left?
-     * @return  boolean                 True if it is a subset
+     *
+     * @param  array   $leftObject  Left array as a JSON string
+     * @param  array   $rightObject Right array as a JSON string
+     * @param  boolean $checkValues Check primitive values for equality?
+     * @param  boolean $allowExtra  Are extra elements allowed in right array?
+     * @param  boolean $isOrdered   Should elements in right be compared in order to left?
+     * @return boolean                 True if it is a subset
      */
     public static function isArrayOfStringifiedJsonObjectsProperSubsetOf(
         $leftObject,
@@ -161,12 +167,13 @@ class TestHelper
 
     /**
      * Check if left array of objects is a subset of right array
-     * @param   array   $left           Left array as a JSON string
-     * @param   array   $right          Right array as a JSON string
-     * @param   boolean $checkValues    Check primitive values for equality?
-     * @param   boolean $allowExtra     Are extra elements allowed in right array?
-     * @param   boolean $isOrdered      Should elements in right be compared in order to left?
-     * @return  boolean                 True if it is a subset
+     *
+     * @param  array   $left        Left array as a JSON string
+     * @param  array   $right       Right array as a JSON string
+     * @param  boolean $checkValues Check primitive values for equality?
+     * @param  boolean $allowExtra  Are extra elements allowed in right array?
+     * @param  boolean $isOrdered   Should elements in right be compared in order to left?
+     * @return boolean                 True if it is a subset
      */
     public static function isArrayOfJsonObjectsProperSubsetOf(
         $left,
@@ -205,7 +212,8 @@ class TestHelper
                     $checkValues,
                     $allowExtra,
                     $isOrdered
-                )) {
+                )
+                ) {
                     $found = true;
                     break;
                 }
@@ -221,11 +229,12 @@ class TestHelper
     
     /**
      * Check whether the a list is a subset of another list
-     * @param   array   $leftList   Expected List
-     * @param   array   $rightList  List to check
-     * @param   boolean $allowExtra Are extras allowed in the list to check?
-     * @param   boolean $isOrdered  Should checking be in order?
-     * @return  boolean             True if leftList is a subset of rightList
+     *
+     * @param  array   $leftList   Expected List
+     * @param  array   $rightList  List to check
+     * @param  boolean $allowExtra Are extras allowed in the list to check?
+     * @param  boolean $isOrdered  Should checking be in order?
+     * @return boolean             True if leftList is a subset of rightList
      */
     public static function isListProperSubsetOf(
         array $leftList,
@@ -251,9 +260,9 @@ class TestHelper
      * Recursively check whether the left headers map is a proper subset of
      * the right headers map. Header keys & values are compared case-insensitive.
      *
-     * @param  array    $leftTree       Left headers map
-     * @param  array    $rightTree      Right headers map
-     * @param  boolean  $checkValues    Check header values for equality?
+     * @param  array   $leftTree    Left headers map
+     * @param  array   $rightTree   Right headers map
+     * @param  boolean $checkValues Check header values for equality?
      * @return boolean                  True if leftTree is a subset of rightTree
      */
     public static function areHeadersProperSubsetOf(
@@ -271,7 +280,8 @@ class TestHelper
 
     /**
      * Is array associative?
-     * @param  mixed   $array Input
+     *
+     * @param  mixed $array Input
      * @return boolean        True if associative array
      */
     public static function isAssoc($array)
@@ -291,6 +301,7 @@ class TestHelper
     /**
      * Downloads and gets a local path to a file URL.
      * Subsequent calls to the same URL will get the cached file.
+     *
      * @param  string $url URL of the file to download
      * @return string      Local path to the file
      */
@@ -306,6 +317,7 @@ class TestHelper
     /**
      * Downloads and gets contents of a  file URL.
      * Subsequent calls to the same URL will get the cached file.
+     *
      * @param  string $url URL of the file to download
      * @return binary      File contents
      */
@@ -316,6 +328,7 @@ class TestHelper
 
     /**
      * Get a new JsonMapper instance for mapping objects
+     *
      * @return \apimatic\jsonmapper\JsonMapper JsonMapper instance
      */
     public static function getJsonMapper()

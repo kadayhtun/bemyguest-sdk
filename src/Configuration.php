@@ -15,18 +15,21 @@ class Configuration
 {
     /**
      * The environment being used'
+     *
      * @var string
      */
     public static $environment = Environments::DEMO;
 
     /**
      * Api Key
+     *
      * @var string
      */
     public static $xAuthorization = '';
 
     /**
      * Get the base uri for a given server in the current environment
+     *
      * @param  string $server Server name
      * @return string         Base URI
      */
@@ -41,6 +44,7 @@ class Configuration
 
     /**
      * A map of all baseurls used in different environments and servers
+     *
      * @var array
      */
     private static $environmentsMap = [

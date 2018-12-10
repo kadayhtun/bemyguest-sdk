@@ -8,24 +8,27 @@
 namespace BmgApiV2Lib\Http;
 
 /**
-* Represents an Http call in context
-*/
+ * Represents an Http call in context
+ */
 class HttpContext
 {
     /**
      * Http request sent
+     *
      * @var HttpRequest
      */
     private $request = null;
 
     /**
      * Http response recevied
+     *
      * @var HttpResponse
      */
     private $response = null;
 
     /**
      * Create an instance of HttpContext for an Http Call
+     *
      * @param HttpRequest  $request  Request first sent on http call
      * @param HttpResponse $response Response received from http call
      */
@@ -37,6 +40,7 @@ class HttpContext
 
     /**
      * Getter for the Http Request
+     *
      * @return HttpRequest request
      */
     public function getRequest()
@@ -46,6 +50,7 @@ class HttpContext
 
     /**
      * Getter for the Http Response
+     *
      * @return HttpResponse response
      */
     public function getResponse()

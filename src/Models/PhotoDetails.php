@@ -10,32 +10,37 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class PhotoDetails implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\PathsDetails $paths public property
+     * @var      \BmgApiV2Lib\Models\PathsDetails $paths public property
      */
     public $paths;
 
     /**
+     *
      * @todo Write general description for this property
-     * @var string|null $caption public property
+     * @var  string|null $caption public property
      */
     public $caption;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string       $uuid    Initialization value for $this->uuid
      * @param PathsDetails $paths   Initialization value for $this->paths
      * @param string       $caption Initialization value for $this->caption

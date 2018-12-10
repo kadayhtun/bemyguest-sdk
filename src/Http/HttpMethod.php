@@ -8,8 +8,8 @@
 namespace BmgApiV2Lib\Http;
 
 /**
-* HTTP Methods Enumeration
-*/
+ * HTTP Methods Enumeration
+ */
 class HttpMethod
 {
     const GET = "Get";

@@ -20,9 +20,12 @@ class ServiceProvider extends BaseProvider
      */
     public function boot()
     {
-        $this->publishes([
+        $this->publishes(
+            [
             $this->configPath() => config_path('bemyguest.php'),
-        ], 'config');
+            ],
+            'config'
+        );
 
         if (! file_exists(config_path('bemyguest.php'))) {
             copy($this->configPath(), config_path('bemyguest.php'));
@@ -38,13 +41,16 @@ class ServiceProvider extends BaseProvider
     {
         $this->mergeConfigFrom($this->configPath(), 'bemyguest');
 
-        $this->app->singleton('bemyguest', function ($app) {
-            $env = $app->environment('production')
+        $this->app->singleton(
+            'bemyguest',
+            function ($app) {
+                $env = $app->environment('production')
                 ? Environments::LIVE_PRODUCTION_
                 : Environments::DEMO;
 
-            return new BeMyGuest($app['config']['bemyguest']['key'], $env);
-        });
+                return new BeMyGuest($app['config']['bemyguest']['key'], $env);
+            }
+        );
     }
 
     /**

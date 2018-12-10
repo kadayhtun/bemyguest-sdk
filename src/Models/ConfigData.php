@@ -10,103 +10,118 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ConfigData implements JsonSerializable
 {
     /**
      * Time
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Now $now public property
+     * @var      \BmgApiV2Lib\Models\Now $now public property
      */
     public $now;
 
     /**
      * API version
+     *
      * @required
-     * @var integer $version public property
+     * @var      integer $version public property
      */
     public $version;
 
     /**
      * Api Server URL
+     *
      * @required
-     * @var string $serverUrl public property
+     * @var      string $serverUrl public property
      */
     public $serverUrl;
 
     /**
      * Photos URL
+     *
      * @required
-     * @var string $photosUrl public property
+     * @var      string $photosUrl public property
      */
     public $photosUrl;
 
     /**
      * Activiesites default sorting
+     *
      * @required
-     * @var array $activitiesSorting public property
+     * @var      array $activitiesSorting public property
      */
     public $activitiesSorting;
 
     /**
      * User details (booking contact)
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\User $user public property
+     * @var      \BmgApiV2Lib\Models\User $user public property
      */
     public $user;
 
     /**
      * Languages object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Languages $languages public property
+     * @var      \BmgApiV2Lib\Models\Languages $languages public property
      */
     public $languages;
 
     /**
      * Currencies object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Currencies $currencies public property
+     * @var      \BmgApiV2Lib\Models\Currencies $currencies public property
      */
     public $currencies;
 
     /**
      * Product type
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\AcitivityTypes $types public property
+     * @var      \BmgApiV2Lib\Models\AcitivityTypes $types public property
      */
     public $types;
 
     /**
      * Categories object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Categories $categories public property
+     * @var      \BmgApiV2Lib\Models\Categories $categories public property
      */
     public $categories;
 
     /**
      * Locations object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Locations $locations public property
+     * @var      \BmgApiV2Lib\Models\Locations $locations public property
      */
     public $locations;
 
     /**
      * Booking Options input types
+     *
      * @required
-     * @var array $optionInputTypes public property
+     * @var      array $optionInputTypes public property
      */
     public $optionInputTypes;
 
     /**
      * Hatoas links
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
+     * @var      \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
      */
     public $links;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param Now            $now               Initialization value for $this->now
      * @param integer        $version           Initialization value for $this->version
      * @param string         $serverUrl         Initialization value for $this->serverUrl
@@ -117,7 +132,7 @@ class ConfigData implements JsonSerializable
      * @param Currencies     $currencies        Initialization value for $this->currencies
      * @param AcitivityTypes $types             Initialization value for $this->types
      * @param Categories     $categories        Initialization value for $this->categories
-     * @param Locations $locations         Initialization value for $this->locations
+     * @param Locations      $locations         Initialization value for $this->locations
      * @param array          $optionInputTypes  Initialization value for $this->optionInputTypes
      * @param array          $links             Initialization value for $this->links
      */

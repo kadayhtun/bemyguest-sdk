@@ -10,67 +10,76 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class PathsDetails implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $original public property
+     * @var      string $original public property
      */
     public $original;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 75x50
-     * @var string $m75x50 public property
+     * @maps     75x50
+     * @var      string $m75x50 public property
      */
     public $m75x50;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 175x112
-     * @var string $m175x112 public property
+     * @maps     175x112
+     * @var      string $m175x112 public property
      */
     public $m175x112;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 680x325
-     * @var string $m680x325 public property
+     * @maps     680x325
+     * @var      string $m680x325 public property
      */
     public $m680x325;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 1280x720
-     * @var string $m1280x720 public property
+     * @maps     1280x720
+     * @var      string $m1280x720 public property
      */
     public $m1280x720;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 1920x1080
-     * @var string $m1920x1080 public property
+     * @maps     1920x1080
+     * @var      string $m1920x1080 public property
      */
     public $m1920x1080;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @maps 2048x1536
-     * @var string $m2048x1536 public property
+     * @maps     2048x1536
+     * @var      string $m2048x1536 public property
      */
     public $m2048x1536;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $original   Initialization value for $this->original
      * @param string $m75x50     Initialization value for $this->m75x50
      * @param string $m175x112   Initialization value for $this->m175x112

@@ -10,26 +10,30 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class GetVouchersResponse implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $data public property
+     * @var      array $data public property
      */
     public $data;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $meta public property
+     * @var      object $meta public property
      */
     public $meta;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array  $data Initialization value for $this->data
      * @param object $meta Initialization value for $this->meta
      */

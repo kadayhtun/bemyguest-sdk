@@ -10,19 +10,22 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class UpdateBookingStatusResponse implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $data public property
+     * @var      object $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param object $data Initialization value for $this->data
      */
     public function __construct()

@@ -10,36 +10,41 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ProductTypesForProduct implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $title public property
+     * @var      string $title public property
      */
     public $title;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\HATOASLinks[] $links public property
+     * @var      \BmgApiV2Lib\Models\HATOASLinks[] $links public property
      */
     public $links;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string      $uuid  Initialization value for $this->uuid
-     * @param string      $title Initialization value for $this->title
-     * @param array $links Initialization value for $this->links
+     *
+     * @param string $uuid  Initialization value for $this->uuid
+     * @param string $title Initialization value for $this->title
+     * @param array  $links Initialization value for $this->links
      */
     public function __construct()
     {

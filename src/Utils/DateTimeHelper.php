@@ -26,11 +26,12 @@ class DateTimeHelper
 
 
     /**
-    * Convert a DateTime object to a string in simple date format
-    * @param mixed $date The DateTime object to convert
-    * @return \DateTime|null The datetime as a string in simple date format
-    * @throws \Exception
-    */
+     * Convert a DateTime object to a string in simple date format
+     *
+     * @param  mixed $date The DateTime object to convert
+     * @return \DateTime|null The datetime as a string in simple date format
+     * @throws \Exception
+     */
     public static function toSimpleDate($date)
     {
         if (! $date) {
@@ -45,10 +46,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert an array of DateTime objects to an array of strings in simple date format
-    * @param array $dates The array of DateTime objects to convert
-    * @return array|null The array of datetime strings in simple date format
-    */
+     * Convert an array of DateTime objects to an array of strings in simple date format
+     *
+     * @param  array $dates The array of DateTime objects to convert
+     * @return array|null The array of datetime strings in simple date format
+     */
     public static function toSimpleDateArray($dates)
     {
         if (! $dates) {
@@ -59,11 +61,12 @@ class DateTimeHelper
     }
 
     /**
-    * Parse a datetime string in simple date format to a DateTime object
-    * @param mixed $date A datetime string in simple date format
-    * @return \DateTime|null The parsed DateTime object
-    * @throws \Exception
-    */
+     * Parse a datetime string in simple date format to a DateTime object
+     *
+     * @param  mixed $date A datetime string in simple date format
+     * @return \DateTime|null The parsed DateTime object
+     * @throws \Exception
+     */
     public static function fromSimpleDate($date)
     {
         if (! $date) {
@@ -80,10 +83,11 @@ class DateTimeHelper
     }
 
     /**
-    * Parse an array of datetime strings in simple date format to an array of DateTime objects
-    * @param array $dates An array of datetime strings in simple date format
-    * @return array|null An array of parsed DateTime objects
-    */
+     * Parse an array of datetime strings in simple date format to an array of DateTime objects
+     *
+     * @param  array $dates An array of datetime strings in simple date format
+     * @return array|null An array of parsed DateTime objects
+     */
     public static function fromSimpleDateArray($dates)
     {
         if (! $dates) {
@@ -95,10 +99,11 @@ class DateTimeHelper
 
 
     /**
-    * Convert a DateTime object to a string in Rfc1123 format
-    * @param mixed $datetime The DateTime object to convert
-    * @return \DateTime|null The datetime as a string in Rfc1123 format
-    */
+     * Convert a DateTime object to a string in Rfc1123 format
+     *
+     * @param  mixed $datetime The DateTime object to convert
+     * @return \DateTime|null The datetime as a string in Rfc1123 format
+     */
     public static function toRfc1123DateTime($datetime)
     {
         if (! $datetime) {
@@ -112,10 +117,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert an array of DateTime objects to an array of strings in Rfc1123 format
-    * @param array $datetimes The array of DateTime objects to convert
-    * @return array|null The array of datetime strings in Rfc1123 format
-    */
+     * Convert an array of DateTime objects to an array of strings in Rfc1123 format
+     *
+     * @param  array $datetimes The array of DateTime objects to convert
+     * @return array|null The array of datetime strings in Rfc1123 format
+     */
     public static function toRfc1123DateTimeArray($datetimes)
     {
         if (! $datetimes) {
@@ -126,11 +132,12 @@ class DateTimeHelper
     }
 
     /**
-    * Parse a datetime string in Rfc1123 format to a DateTime object
-    * @param mixed $datetime A datetime string in Rfc1123 format
-    * @return \DateTime|null The parsed DateTime object
-    * @throws \Exception
-    */
+     * Parse a datetime string in Rfc1123 format to a DateTime object
+     *
+     * @param  mixed $datetime A datetime string in Rfc1123 format
+     * @return \DateTime|null The parsed DateTime object
+     * @throws \Exception
+     */
     public static function fromRfc1123DateTime($datetime)
     {
         if (! $datetime) {
@@ -147,10 +154,11 @@ class DateTimeHelper
     }
 
     /**
-    * Parse an array of datetime strings in Rfc1123 format to an array of DateTime objects
-    * @param array $datetimes An array of datetime strings in Rfc1123 format
-    * @return array|null An array of parsed DateTime objects
-    */
+     * Parse an array of datetime strings in Rfc1123 format to an array of DateTime objects
+     *
+     * @param  array $datetimes An array of datetime strings in Rfc1123 format
+     * @return array|null An array of parsed DateTime objects
+     */
     public static function fromRfc1123DateTimeArray($datetimes)
     {
         if (! $datetimes) {
@@ -162,11 +170,12 @@ class DateTimeHelper
 
 
     /**
-    * Convert a DateTime object to a string in Rfc3339 format
-    * @param mixed $datetime The DateTime object to convert
-    * @return string The datetime as a string in Rfc3339 format
-    * @throws \Exception
-    */
+     * Convert a DateTime object to a string in Rfc3339 format
+     *
+     * @param  mixed $datetime The DateTime object to convert
+     * @return string The datetime as a string in Rfc3339 format
+     * @throws \Exception
+     */
     public static function toRfc3339DateTime($datetime)
     {
         if (! $datetime) {
@@ -183,10 +192,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert an array of DateTime objects to an array of strings in Rfc3339 format
-    * @param array $datetimes The array of DateTime objects to convert
-    * @return array|null The array of datetime strings in Rfc3339 format
-    */
+     * Convert an array of DateTime objects to an array of strings in Rfc3339 format
+     *
+     * @param  array $datetimes The array of DateTime objects to convert
+     * @return array|null The array of datetime strings in Rfc3339 format
+     */
     public static function toRfc3339DateTimeArray($datetimes)
     {
         if (! $datetimes) {
@@ -197,11 +207,12 @@ class DateTimeHelper
     }
 
     /**
-    * Parse a datetime string in Rfc3339 format to a DateTime object
-    * @param mixed $datetime A datetime string in Rfc3339 format
-    * @return \DateTime|null The parsed DateTime object
-    * @throws \Exception
-    */
+     * Parse a datetime string in Rfc3339 format to a DateTime object
+     *
+     * @param  mixed $datetime A datetime string in Rfc3339 format
+     * @return \DateTime|null The parsed DateTime object
+     * @throws \Exception
+     */
     public static function fromRfc3339DateTime($datetime)
     {
         if (! $datetime) {
@@ -233,10 +244,11 @@ class DateTimeHelper
     }
 
     /**
-    * Parse an array of datetime strings in Rfc3339 format to an array of DateTime objects
-    * @param array $datetimes An array of datetime strings in Rfc3339 format
-    * @return array|null An array of parsed DateTime objects
-    */
+     * Parse an array of datetime strings in Rfc3339 format to an array of DateTime objects
+     *
+     * @param  array $datetimes An array of datetime strings in Rfc3339 format
+     * @return array|null An array of parsed DateTime objects
+     */
     public static function fromRfc3339DateTimeArray($datetimes)
     {
         if (! $datetimes) {
@@ -248,11 +260,12 @@ class DateTimeHelper
 
 
     /**
-    * Convert a DateTime object to a Unix Timestamp
-    * @param mixed value The DateTime object to convert
-    * @return \DateTime|null The converted Unix Timestamp
-    * @throws \Exception
-    */
+     * Convert a DateTime object to a Unix Timestamp
+     *
+     * @param  mixed value The DateTime object to convert
+     * @return \DateTime|null The converted Unix Timestamp
+     * @throws \Exception
+     */
     public static function toUnixTimestamp($datetime)
     {
         if (! $datetime) {
@@ -267,10 +280,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert an array of DateTime objects to an array of strings in Unix Timestamp
-    * @param array $datetimes The array of DateTime objects to convert
-    * @return array|null The array of datetime strings in Unix Timestamp
-    */
+     * Convert an array of DateTime objects to an array of strings in Unix Timestamp
+     *
+     * @param  array $datetimes The array of DateTime objects to convert
+     * @return array|null The array of datetime strings in Unix Timestamp
+     */
     public static function toUnixTimestampArray($datetimes)
     {
         if (! $datetimes) {
@@ -281,11 +295,12 @@ class DateTimeHelper
     }
 
     /**
-    * Parse a Unix Timestamp to a DateTime object
-    * @param mixed $datetime The Unix Timestamp
-    * @return DateTime|null The parsed DateTime object
-    * @throws \Exception
-    */
+     * Parse a Unix Timestamp to a DateTime object
+     *
+     * @param  mixed $datetime The Unix Timestamp
+     * @return DateTime|null The parsed DateTime object
+     * @throws \Exception
+     */
     public static function fromUnixTimestamp($datetime)
     {
         if (! $datetime) {
@@ -302,10 +317,11 @@ class DateTimeHelper
     }
 
     /**
-    * Parse an array of Unix Timestamps to an array of DateTime objects
-    * @param array $datetimes An array of Unix Timestamps
-    * @return array|null An array of parsed DateTime objects
-    */
+     * Parse an array of Unix Timestamps to an array of DateTime objects
+     *
+     * @param  array $datetimes An array of Unix Timestamps
+     * @return array|null An array of parsed DateTime objects
+     */
     public static function fromUnixTimestampArray($datetimes)
     {
         if (! $datetimes) {
@@ -316,10 +332,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert a DateTime object to a SQL DateTime
-    * @param \DateTime $datetime The DateTime object to convert
-    * @return string|null The converted format
-    */
+     * Convert a DateTime object to a SQL DateTime
+     *
+     * @param  \DateTime $datetime The DateTime object to convert
+     * @return string|null The converted format
+     */
     public static function toSqlDateTime($datetime)
     {
         if (! $datetime) {
@@ -330,10 +347,11 @@ class DateTimeHelper
     }
 
     /**
-    * Convert an array of DateTime objects to an array of strings in SQL DateTime
-    * @param array $datetimes The array of DateTime objects to convert
-    * @return array|null The array of datetime strings in SQL DATETIME format
-    */
+     * Convert an array of DateTime objects to an array of strings in SQL DateTime
+     *
+     * @param  array $datetimes The array of DateTime objects to convert
+     * @return array|null The array of datetime strings in SQL DATETIME format
+     */
     public static function toSqlDateTimeArray($datetimes)
     {
         if (! $datetimes) {
@@ -344,11 +362,12 @@ class DateTimeHelper
     }
 
     /**
-    * Parse the SQL DateTime format to a DateTime object
-    * @param mixed $datetime The SQL DateTime
-    * @return \DateTime|null The parsed DateTime object
-    * @throws \Exception
-    */
+     * Parse the SQL DateTime format to a DateTime object
+     *
+     * @param  mixed $datetime The SQL DateTime
+     * @return \DateTime|null The parsed DateTime object
+     * @throws \Exception
+     */
     public static function fromSqlDateTime($datetime)
     {
         if (! $datetime) {
@@ -365,10 +384,11 @@ class DateTimeHelper
     }
 
     /**
-    * Parse an array of SQL DateTime to an array of DateTime objects
-    * @param array $datetimes An array of SQL DateTime
-    * @return array|null An array of parsed DateTime objects
-    */
+     * Parse an array of SQL DateTime to an array of DateTime objects
+     *
+     * @param  array $datetimes An array of SQL DateTime
+     * @return array|null An array of parsed DateTime objects
+     */
     public static function fromSqlDateTimeArray(array $datetimes)
     {
         if (! $datetimes) {

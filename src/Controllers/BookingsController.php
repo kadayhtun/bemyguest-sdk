@@ -20,17 +20,20 @@ use BmgApiV2Lib\Servers;
 use Unirest\Request;
 
 /**
+ *
  * @todo Add a general description for this controller.
  */
 class BookingsController extends BaseController
 {
     /**
+     *
      * @var BookingsController The reference to *Singleton* instance of this class
      */
     private static $instance;
 
     /**
      * Returns the *Singleton* instance of this class.
+     *
      * @return BookingsController The *Singleton* instance.
      */
     public static function getInstance()
@@ -45,17 +48,17 @@ class BookingsController extends BaseController
     /**
      * Get a list of bookings.
      *
-     * @param string  $dateStart         (optional) Date start YYYY-MM-DD
-     * @param string  $dateEnd           (optional) Date start YYYY-MM-DD
-     * @param string  $firstName         (optional) Booking contact first name
-     * @param string  $lastName          (optional) Booking contact first name
-     * @param string  $email             (optional) Booking contact email
-     * @param string  $phone             (optional) Booking contact phone number
-     * @param string  $partnerReference  (optional) Partner reference (your booking id)
-     * @param integer $page              (optional) Number of page
-     * @param integer $perPage           (optional) Number of bookings per page
-     * @param string  $query             (optional) Query string
-     * @param string  $status            (optional) Booking status
+     * @param  string  $dateStart        (optional) Date start YYYY-MM-DD
+     * @param  string  $dateEnd          (optional) Date start YYYY-MM-DD
+     * @param  string  $firstName        (optional) Booking contact first name
+     * @param  string  $lastName         (optional) Booking contact first name
+     * @param  string  $email            (optional) Booking contact email
+     * @param  string  $phone            (optional) Booking contact phone number
+     * @param  string  $partnerReference (optional) Partner reference (your booking id)
+     * @param  integer $page             (optional) Number of page
+     * @param  integer $perPage          (optional) Number of bookings per page
+     * @param  string  $query            (optional) Query string
+     * @param  string  $status           (optional) Booking status
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -80,7 +83,9 @@ class BookingsController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/bookings/';
 
         //process optional query parameters
-        APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
+        APIHelper::appendUrlWithQueryParameters(
+            $_queryBuilder,
+            array (
             'date_start'        => $dateStart,
             'date_end'          => $dateEnd,
             'first_name'        => $firstName,
@@ -92,7 +97,8 @@ class BookingsController extends BaseController
             'per_page'          => $perPage,
             'query'             => $query,
             'status'            => $status,
-        ));
+            )
+        );
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -155,8 +161,8 @@ class BookingsController extends BaseController
      *
      * 5 days after the booking date all booking with status waiting will be marked expired.
      *
-     * @param string $uuid   UUID of booking
-     * @param string $status Status `confirm` or `cancel`
+     * @param  string $uuid   UUID of booking
+     * @param  string $status Status `confirm` or `cancel`
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -172,10 +178,13 @@ class BookingsController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/bookings/{uuid}/{status}';
 
         //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters(
+            $_queryBuilder,
+            array (
             'uuid'   => $uuid,
             'status' => $status,
-            ));
+            )
+        );
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -228,7 +237,7 @@ class BookingsController extends BaseController
     /**
      * Get Booking status information.
      *
-     * @param string $uuid UUID of booking
+     * @param  string $uuid UUID of booking
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -243,9 +252,12 @@ class BookingsController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/bookings/{uuid}';
 
         //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters(
+            $_queryBuilder,
+            array (
             'uuid' => $uuid,
-            ));
+            )
+        );
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -294,7 +306,7 @@ class BookingsController extends BaseController
      * You cannot just send the link to the final customer. You have to download them and distribute on
      * your own. Download time will be registered and available to you in booking details.
      *
-     * @param string $bookingUuid Booking UUID
+     * @param  string $bookingUuid Booking UUID
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -309,9 +321,12 @@ class BookingsController extends BaseController
         $_queryBuilder = $_queryBuilder . '/v2/bookings/{bookingUuid}/vouchers';
 
         //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters(
+            $_queryBuilder,
+            array (
             'bookingUuid' => $bookingUuid,
-            ));
+            )
+        );
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
@@ -363,7 +378,7 @@ class BookingsController extends BaseController
      * Before crating a booking check availability and price calling /v2/product-types/{uuid}/price-
      * lists/YYYY-MM-DD
      *
-     * @param Models\CreateABookingRequest $body Booking request payload (json)
+     * @param  Models\CreateABookingRequest $body Booking request payload (json)
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */

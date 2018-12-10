@@ -7,27 +7,32 @@ use JsonSerializable;
 class Continent implements JsonSerializable
 {
     /**
+     *
      * @var string $continent
      */
     public $continent;
 
     /**
+     *
      * @var string $code
      */
     public $code;
 
     /**
+     *
      * @var string $uuid
      */
     public $uuid;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\Countries
      */
     public $countries;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $name Initialization value for $this->name
      * @param string $code Initialization value for $this->code
      * @param string $uuid Initialization value for $this->uuid

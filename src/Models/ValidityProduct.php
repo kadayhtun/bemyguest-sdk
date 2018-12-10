@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ValidityProduct implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $type public property
+     * @var      string $type public property
      */
     public $type;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $days public property
+     * @var      string $days public property
      */
     public $days;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $date public property
+     * @var      string $date public property
      */
     public $date;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $type Initialization value for $this->type
      * @param string $days Initialization value for $this->days
      * @param string $date Initialization value for $this->date

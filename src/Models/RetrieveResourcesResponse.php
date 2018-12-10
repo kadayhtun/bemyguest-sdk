@@ -10,47 +10,54 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class RetrieveResourcesResponse implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $name public property
+     * @var      string $name public property
      */
     public $name;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $baseUrl public property
+     * @var      string $baseUrl public property
      */
     public $baseUrl;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $encoding public property
+     * @var      string $encoding public property
      */
     public $encoding;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $contentTypes public property
+     * @var      array $contentTypes public property
      */
     public $contentTypes;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $resources public property
+     * @var      object $resources public property
      */
     public $resources;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $name         Initialization value for $this->name
      * @param string $baseUrl      Initialization value for $this->baseUrl
      * @param string $encoding     Initialization value for $this->encoding

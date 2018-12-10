@@ -10,30 +10,35 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class VoucherValidity implements JsonSerializable
 {
     /**
+     *
      * @var object $adults
      */
     public $adults;
 
     /**
+     *
      * @var object $children
      */
     public $children;
 
     /**
+     *
      * @var object $seniors
      */
     public $seniors;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $adults      Initialization value for $this->uuid
+     *
+     * @param string $adults   Initialization value for $this->uuid
      * @param string $children Initialization value for $this->startTime
-     * @param string $seniors   Initialization value for $this->endTime
+     * @param string $seniors  Initialization value for $this->endTime
      */
     public function __construct()
     {

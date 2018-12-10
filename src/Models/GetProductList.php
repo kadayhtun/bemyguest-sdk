@@ -10,26 +10,29 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
- *Product list data
+ * Product list data
  */
 class GetProductList implements JsonSerializable
 {
     /**
      * Data container
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\ProductList[] $data public property
+     * @var      \BmgApiV2Lib\Models\ProductList[] $data public property
      */
     public $data;
 
     /**
      * Meta description, pagination, page count
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\Meta $meta public property
+     * @var      \BmgApiV2Lib\Models\Meta $meta public property
      */
     public $meta;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array $data Initialization value for $this->data
      * @param Meta  $meta Initialization value for $this->meta
      */

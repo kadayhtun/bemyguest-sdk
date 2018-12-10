@@ -8,36 +8,41 @@
 namespace BmgApiV2Lib\Http;
 
 /**
-* Represents a single Http Request
-*/
+ * Represents a single Http Request
+ */
 class HttpRequest
 {
     /**
      * Http method as defined in HttpMethod class
+     *
      * @var string
      */
     private $httpMethod = null;
 
     /**
      * Headers
+     *
      * @var array
      */
     private $headers = null;
 
     /**
      * Query url
+     *
      * @var string
      */
     private $queryUrl = null;
 
     /**
      * Input parameters
+     *
      * @var array
      */
     private $parameters = null;
     
     /**
      * Create a new HttpRequest
+     *
      * @param string     $httpMethod Http method
      * @param array|null $headers    Map of headers
      * @param string     $queryUrl   Query url
@@ -53,6 +58,7 @@ class HttpRequest
 
     /**
      * Get http method
+     *
      * @return string
      */
     public function getHttpMethod()
@@ -62,6 +68,7 @@ class HttpRequest
     
     /**
      * Set http method
+     *
      * @param string $httpMethod Http Method as defined in HttpMethod class
      */
     public function setHttpMethod($httpMethod)
@@ -71,6 +78,7 @@ class HttpRequest
 
     /**
      * Get headers
+     *
      * @return array Map of headers
      */
     public function getHeaders()
@@ -80,6 +88,7 @@ class HttpRequest
     
     /**
      * Set headers
+     *
      * @param array $headers Headers as map
      */
     public function setHeaders(array $headers)
@@ -89,6 +98,7 @@ class HttpRequest
 
     /**
      * Get query url
+     *
      * @return string Query url
      */
     public function getQueryUrl()
@@ -98,6 +108,7 @@ class HttpRequest
     
     /**
      * Set query url
+     *
      * @param string $queryUrl Query url
      */
     public function setQueryUrl($queryUrl)
@@ -107,6 +118,7 @@ class HttpRequest
 
     /**
      * Get parameters
+     *
      * @return array Map of input parameters
      */
     public function getParameters()
@@ -116,6 +128,7 @@ class HttpRequest
     
     /**
      * Set parameters
+     *
      * @param array $parameters Map of input parameters
      */
     public function setParameters($parameters)

@@ -11,82 +11,94 @@ use JsonSerializable;
 use BmgApiV2Lib\Utils\DateTimeHelper;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ProductList implements JsonSerializable
 {
     /**
      * UUID of product
+     *
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
      * Date
+     *
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
-     * @var \DateTime $updatedAt public property
+     * @factory  \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
+     * @var      \DateTime $updatedAt public property
      */
     public $updatedAt;
 
     /**
      * Product title
+     *
      * @required
-     * @var string $title public property
+     * @var      string $title public property
      */
     public $title;
 
     /**
      * Product title translated to langueage provided as parameter
+     *
      * @required
-     * @var string $titleTranslated public property
+     * @var      string $titleTranslated public property
      */
     public $titleTranslated;
 
     /**
      * base price - average price for marketing purposes
+     *
      * @required
-     * @var double $basePrice public property
+     * @var      double $basePrice public property
      */
     public $basePrice;
 
     /**
      * Activity type name
+     *
      * @required
-     * @var string $typeName public property
+     * @var      string $typeName public property
      */
     public $typeName;
 
     /**
      * Activity type UUID
+     *
      * @required
-     * @var string $typeUuid public property
+     * @var      string $typeUuid public property
      */
     public $typeUuid;
 
     /**
      * HATOAS links
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
+     * @var      \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
      */
     public $links;
 
     /**
      * Valid from date
+     *
      * @var string|null $validFrom public property
      */
     public $validFrom;
 
     /**
      * Valid trough date
+     *
      * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
-     * @var \DateTime|null $validThrough public property
+     * @var     \DateTime|null $validThrough public property
      */
     public $validThrough;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string    $uuid            Initialization value for $this->uuid
      * @param \DateTime $updatedAt       Initialization value for $this->updatedAt
      * @param string    $title           Initialization value for $this->title

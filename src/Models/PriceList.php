@@ -13,63 +13,73 @@ use JsonSerializable;
 class PriceList implements JsonSerializable
 {
     /**
+     *
      * @var \DateTime $date
      */
     public $date;
 
     /**
+     *
      * @var string $weekday
      */
     public $weekday;
 
     /**
+     *
      * @var boolean $available
      */
     public $available;
 
     /**
+     *
      * @var string $currency
      */
     public $currency;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\PriceDetails $prices
      */
     public $prices;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\TimeslotProductType[] $timeslots
      */
     public $timeslots;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\OptionProductType[] $options
      */
     public $options;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\VoucherValidity $voucherValidity
      */
     public $voucherValidity;
 
     /**
      * HATOAS links
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
+     * @var      \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
      */
     public $links;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $date
-     * @param string $weekday
-     * @param string $available
-     * @param string $currency
-     * @param \BmgApiV2Lib\Models\PriceDetails $prices
-     * @param array $timeslots
-     * @param array $options
+     *
+     * @param string                              $date
+     * @param string                              $weekday
+     * @param string                              $available
+     * @param string                              $currency
+     * @param \BmgApiV2Lib\Models\PriceDetails    $prices
+     * @param array                               $timeslots
+     * @param array                               $options
      * @param \BmgApiV2Lib\Models\VoucherValidity $voucherValidity
-     * @param array $links
+     * @param array                               $links
      */
     public function __construct()
     {

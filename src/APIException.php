@@ -16,20 +16,23 @@ class APIException extends Exception
 {
     /**
      * Error message
+     *
      * @var string
      */
     private $errorMessage;
 
     /**
      * HTTP context
+     *
      * @var Http\HttpContext
      */
     private $context;
     
     /**
      * The HTTP response code from the API request
-     * @param string $reason the reason for raising an exception
-     * @param int $responseCode the HTTP response code from the API request
+     *
+     * @param string $reason       the reason for raising an exception
+     * @param int    $responseCode the HTTP response code from the API request
      * @param string $responseBody the HTTP response body from the API request
      */
     public function __construct($reason, $context)
@@ -52,6 +55,7 @@ class APIException extends Exception
 
     /**
      * The HTTP context from the API request
+     *
      * @return Http\HttpContext
      */
     public function getContext()
@@ -61,6 +65,7 @@ class APIException extends Exception
 
     /**
      * The HTTP response code from the API request
+     *
      * @return int
      */
     public function getResponseCode()
@@ -70,6 +75,7 @@ class APIException extends Exception
 
     /**
      * The HTTP response body from the API request
+     *
      * @return mixed
      */
     public function getResponseBody()
@@ -79,6 +85,7 @@ class APIException extends Exception
 
     /**
      * The reason for raising an exception
+     *
      * @return string
      */
     public function getReason()

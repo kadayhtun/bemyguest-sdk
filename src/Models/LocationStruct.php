@@ -10,54 +10,62 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class LocationStruct implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $city public property
+     * @var      string $city public property
      */
     public $city;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $cityUuid public property
+     * @var      string $cityUuid public property
      */
     public $cityUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $state public property
+     * @var      string $state public property
      */
     public $state;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $stateUuid public property
+     * @var      string $stateUuid public property
      */
     public $stateUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $country public property
+     * @var      string $country public property
      */
     public $country;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $countryUuid public property
+     * @var      string $countryUuid public property
      */
     public $countryUuid;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $city        Initialization value for $this->city
      * @param string $cityUuid    Initialization value for $this->cityUuid
      * @param string $state       Initialization value for $this->state

@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class TimeslotProductType implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $startTime public property
+     * @var      string $startTime public property
      */
     public $startTime;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $endTime public property
+     * @var      string $endTime public property
      */
     public $endTime;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $uuid      Initialization value for $this->uuid
      * @param string $startTime Initialization value for $this->startTime
      * @param string $endTime   Initialization value for $this->endTime

@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class CategoriesData implements JsonSerializable
 {
     /**
      * name of category
+     *
      * @required
-     * @maps Name
-     * @var string $name public property
+     * @maps     Name
+     * @var      string $name public property
      */
     public $name;
 
     /**
      * UUID of category
+     *
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
      * Sub categories
+     *
      * @var \BmgApiV2Lib\Models\CategoryChild[]|null $children public property
      */
     public $children;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $name     Initialization value for $this->name
      * @param string $uuid     Initialization value for $this->uuid
      * @param array  $children Initialization value for $this->children

@@ -10,33 +10,37 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
- *Links to navigate thru API
+ * Links to navigate thru API
  */
 class HATOASLinks implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $method public property
+     * @var      string $method public property
      */
     public $method;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $rel public property
+     * @var      string $rel public property
      */
     public $rel;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $href public property
+     * @var      string $href public property
      */
     public $href;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $method Initialization value for $this->method
      * @param string $rel    Initialization value for $this->rel
      * @param string $href   Initialization value for $this->href

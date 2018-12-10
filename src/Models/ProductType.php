@@ -10,375 +10,428 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ProductType implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $title public property
+     * @var      string $title public property
      */
     public $title;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $titleTranslated public property
+     * @var      string $titleTranslated public property
      */
     public $titleTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $description public property
+     * @var      string $description public property
      */
     public $description;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $descriptionTranslated public property
+     * @var      string $descriptionTranslated public property
      */
     public $descriptionTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $durationDays public property
+     * @var      string $durationDays public property
      */
     public $durationDays;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $durationHours public property
+     * @var      integer $durationHours public property
      */
     public $durationHours;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $durationMinutes public property
+     * @var      integer $durationMinutes public property
      */
     public $durationMinutes;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $daysInAdvance public property
+     * @var      string $daysInAdvance public property
      */
     public $daysInAdvance;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $isNonRefundable public property
+     * @var      bool $isNonRefundable public property
      */
     public $isNonRefundable;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minPax public property
+     * @var      integer $minPax public property
      */
     public $minPax;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxPax public property
+     * @var      integer $maxPax public property
      */
     public $maxPax;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minAdultAge public property
+     * @var      integer $minAdultAge public property
      */
     public $minAdultAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxAdultAge public property
+     * @var      integer $maxAdultAge public property
      */
     public $maxAdultAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $hasChildPrice public property
+     * @var      bool $hasChildPrice public property
      */
     public $hasChildPrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $allowChildren public property
+     * @var      bool $allowChildren public property
      */
     public $allowChildren;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minChildren public property
+     * @var      integer $minChildren public property
      */
     public $minChildren;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxChildren public property
+     * @var      integer $maxChildren public property
      */
     public $maxChildren;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minChildAge public property
+     * @var      integer $minChildAge public property
      */
     public $minChildAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxChildAge public property
+     * @var      integer $maxChildAge public property
      */
     public $maxChildAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $allowSeniors public property
+     * @var      bool $allowSeniors public property
      */
     public $allowSeniors;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $minSeniors public property
+     * @var      string $minSeniors public property
      */
     public $minSeniors;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $maxSeniors public property
+     * @var      string $maxSeniors public property
      */
     public $maxSeniors;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $minSeniorAge public property
+     * @var      string $minSeniorAge public property
      */
     public $minSeniorAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $maxSeniorAge public property
+     * @var      string $maxSeniorAge public property
      */
     public $maxSeniorAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $allowInfant public property
+     * @var      bool $allowInfant public property
      */
     public $allowInfant;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minInfantAge public property
+     * @var      integer $minInfantAge public property
      */
     public $minInfantAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxInfantAge public property
+     * @var      integer $maxInfantAge public property
      */
     public $maxInfantAge;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $maxGroup public property
+     * @var      string $maxGroup public property
      */
     public $maxGroup;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $minGroup public property
+     * @var      string $minGroup public property
      */
     public $minGroup;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $instantConfirmation public property
+     * @var      bool $instantConfirmation public property
      */
     public $instantConfirmation;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $nonInstantVoucher public property
+     * @var      bool $nonInstantVoucher public property
      */
     public $nonInstantVoucher;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $directAdmission public property
+     * @var      bool $directAdmission public property
      */
     public $directAdmission;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $voucherUse public property
+     * @var      string $voucherUse public property
      */
     public $voucherUse;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $voucherUseTranslated public property
+     * @var      string $voucherUseTranslated public property
      */
     public $voucherUseTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $voucherRedemptionAddress public property
+     * @var      string $voucherRedemptionAddress public property
      */
     public $voucherRedemptionAddress;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $voucherRedemptionAddressTranslated public property
+     * @var      string $voucherRedemptionAddressTranslated public property
      */
     public $voucherRedemptionAddressTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $voucherRequiresPrinting public property
+     * @var      bool $voucherRequiresPrinting public property
      */
     public $voucherRequiresPrinting;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $meetingTime public property
+     * @var      string $meetingTime public property
      */
     public $meetingTime;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $meetingAddress public property
+     * @var      string $meetingAddress public property
      */
     public $meetingAddress;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $meetingLocation public property
+     * @var      string $meetingLocation public property
      */
     public $meetingLocation;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $meetingLocationTranslated public property
+     * @var      string $meetingLocationTranslated public property
      */
     public $meetingLocationTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $cancellationPolicies public property
+     * @var      array $cancellationPolicies public property
      */
     public $cancellationPolicies;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var double $recommendedMarkup public property
+     * @var      double $recommendedMarkup public property
      */
     public $recommendedMarkup;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $adultParityPrice public property
+     * @var      integer $adultParityPrice public property
      */
     public $adultParityPrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $childParityPrice public property
+     * @var      integer $childParityPrice public property
      */
     public $childParityPrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $seniorParityPrice public property
+     * @var      integer $seniorParityPrice public property
      */
     public $seniorParityPrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\ValidityProduct $validity public property
+     * @var      \BmgApiV2Lib\Models\ValidityProduct $validity public property
      */
     public $validity;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $timeslots public property
+     * @var      array $timeslots public property
      */
     public $timeslots;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $options public property
+     * @var      array $options public property
      */
     public $options;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
+     * @var      \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
      */
     public $links;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string          $uuid                               Initialization value for $this->uuid
      * @param string          $title                              Initialization value for $this->title
      * @param string          $titleTranslated                    Initialization value for $this->titleTranslated
      * @param string          $description                        Initialization value for $this->description
      * @param string          $descriptionTranslated              Initialization value for $this-
-     *                                                              >descriptionTranslated
+     *                                                            >descriptionTranslated
      * @param string          $durationDays                       Initialization value for $this->durationDays
      * @param integer         $durationHours                      Initialization value for $this->durationHours
      * @param integer         $durationMinutes                    Initialization value for $this->durationMinutes
@@ -409,20 +462,20 @@ class ProductType implements JsonSerializable
      * @param bool            $directAdmission                    Initialization value for $this->directAdmission
      * @param string          $voucherUse                         Initialization value for $this->voucherUse
      * @param string          $voucherUseTranslated               Initialization value for $this-
-     *                                                              >voucherUseTranslated
+     *                                                            >voucherUseTranslated
      * @param string          $voucherRedemptionAddress           Initialization value for $this-
-     *                                                              >voucherRedemptionAddress
+     *                                                            >voucherRedemptionAddress
      * @param string          $voucherRedemptionAddressTranslated Initialization value for $this-
-     *                                                              >voucherRedemptionAddressTranslated
+     *                                                            >voucherRedemptionAddressTranslated
      * @param bool            $voucherRequiresPrinting            Initialization value for $this-
-     *                                                              >voucherRequiresPrinting
+     *                                                            >voucherRequiresPrinting
      * @param string          $meetingTime                        Initialization value for $this->meetingTime
      * @param string          $meetingAddress                     Initialization value for $this->meetingAddress
      * @param string          $meetingLocation                    Initialization value for $this->meetingLocation
      * @param string          $meetingLocationTranslated          Initialization value for $this-
-     *                                                              >meetingLocationTranslated
+     *                                                            >meetingLocationTranslated
      * @param array           $cancellationPolicies               Initialization value for $this-
-     *                                                              >cancellationPolicies
+     *                                                            >cancellationPolicies
      * @param double          $recommendedMarkup                  Initialization value for $this->recommendedMarkup
      * @param integer         $adultParityPrice                   Initialization value for $this->adultParityPrice
      * @param integer         $childParityPrice                   Initialization value for $this->childParityPrice

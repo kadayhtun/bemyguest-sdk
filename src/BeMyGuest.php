@@ -76,19 +76,20 @@ class BeMyGuest
         // we will assumes as it is callback for after requested,
         // which contains both request & response as HTTP context.
         if (count($callbacks) === 1 && is_callable($callbacks[0])) {
-            return (new HttpCallBack)->setOnAfterRequest($callbacks[0]);
+            return (new HttpCallBack())->setOnAfterRequest($callbacks[0]);
         }
 
         // If two callbacks provided, we will register as both
         // before and after request hook.
         if (isset($callbacks[0]) && is_callable($callbacks[0])
-            && isset($callbacks[1]) && is_callable($callbacks[1])) {
+            && isset($callbacks[1]) && is_callable($callbacks[1])
+        ) {
             return new HttpCallBack($callbacks[0], $callbacks[1]);
         }
 
         // Finally, we will consider string indexes, we will match them
         //  with 'before'and 'after' and feed them respectively.
-        $httpCallback = new HttpCallBack;
+        $httpCallback = new HttpCallBack();
 
         if (isset($callbacks['before']) && is_callable($callbacks['before'])) {
             $httpCallback->setOnBeforeRequest($callbacks['before']);
@@ -103,7 +104,7 @@ class BeMyGuest
 
     protected function getDefaultRequestHooks()
     {
-        $httpCallback = new HttpCallBack;
+        $httpCallback = new HttpCallBack();
 
         if (is_callable($this->beforeRequestHook)) {
             $httpCallback->setOnBeforeRequest($this->beforeRequestHook);

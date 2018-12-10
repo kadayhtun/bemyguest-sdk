@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ProductHitRequest implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $country public property
+     * @var      string $country public property
      */
     public $country;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $language public property
+     * @var      string $language public property
      */
     public $language;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $device public property
+     * @var      string $device public property
      */
     public $device;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $country  Initialization value for $this->country
      * @param string $language Initialization value for $this->language
      * @param string $device   Initialization value for $this->device

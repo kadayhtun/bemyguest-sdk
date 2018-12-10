@@ -10,47 +10,54 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class PostBulkBuyRequestRequest implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $message public property
+     * @var      string $message public property
      */
     public $message;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $bulkProductTypeUuid public property
+     * @var      string $bulkProductTypeUuid public property
      */
     public $bulkProductTypeUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $adults public property
+     * @var      integer $adults public property
      */
     public $adults;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $children public property
+     * @var      integer $children public property
      */
     public $children;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $seniors public property
+     * @var      integer $seniors public property
      */
     public $seniors;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string  $message             Initialization value for $this->message
      * @param string  $bulkProductTypeUuid Initialization value for $this->bulkProductTypeUuid
      * @param integer $adults              Initialization value for $this->adults

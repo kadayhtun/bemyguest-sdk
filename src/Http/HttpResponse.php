@@ -8,30 +8,34 @@
 namespace BmgApiV2Lib\Http;
 
 /**
-* Http response received
-*/
+ * Http response received
+ */
 class HttpResponse
 {
     /**
      * Status code of response
+     *
      * @var int
      */
     private $statusCode = null;
 
     /**
      * Headers received
+     *
      * @var array
      */
     private $headers = null;
 
     /**
      * Raw body of the response
+     *
      * @var string
      */
     private $rawBody = null;
 
     /**
      * Create a new instance of a HttpResponse
+     *
      * @param int    $statusCode Response code
      * @param array  $headers    Map of headers
      * @param string $rawBody    Raw response body
@@ -45,6 +49,7 @@ class HttpResponse
 
     /**
      * Get status code
+     *
      * @return int Status code
      */
     public function getStatusCode()
@@ -54,6 +59,7 @@ class HttpResponse
 
     /**
      * Get headers
+     *
      * @return array Map of headers
      */
     public function getHeaders()
@@ -63,6 +69,7 @@ class HttpResponse
 
     /**
      * Get raw response body
+     *
      * @return string Raw body
      */
     public function getRawBody()

@@ -11,399 +11,449 @@ use JsonSerializable;
 use BmgApiV2Lib\Utils\DateTimeHelper;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class ProductDetailsData implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
-     * @var \DateTime $updatedAt public property
+     * @factory  \BmgApiV2Lib\Utils\DateTimeHelper::fromSqlDateTime
+     * @var      \DateTime $updatedAt public property
      */
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $title public property
+     * @var      string $title public property
      */
     public $title;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $titleTranslated public property
+     * @var      string $titleTranslated public property
      */
     public $titleTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $description public property
+     * @var      string $description public property
      */
     public $description;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $descriptionTranslated public property
+     * @var      string $descriptionTranslated public property
      */
     public $descriptionTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $highlights public property
+     * @var      string $highlights public property
      */
     public $highlights;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $highlightsTranslated public property
+     * @var      string $highlightsTranslated public property
      */
     public $highlightsTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $additionalInfo public property
+     * @var      string $additionalInfo public property
      */
     public $additionalInfo;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $additionalInfoTranslated public property
+     * @var      string $additionalInfoTranslated public property
      */
     public $additionalInfoTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $priceIncludes public property
+     * @var      string $priceIncludes public property
      */
     public $priceIncludes;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $priceIncludesTranslated public property
+     * @var      string $priceIncludesTranslated public property
      */
     public $priceIncludesTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $priceExcludes public property
+     * @var      string $priceExcludes public property
      */
     public $priceExcludes;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $priceExcludesTranslated public property
+     * @var      string $priceExcludesTranslated public property
      */
     public $priceExcludesTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
-     * @var \DateTime $validFrom public property
+     * @factory  \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
+     * @var      \DateTime $validFrom public property
      */
     public $validFrom;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @factory \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
-     * @var \DateTime $validThrough public property
+     * @factory  \BmgApiV2Lib\Utils\DateTimeHelper::fromSimpleDate
+     * @var      \DateTime $validThrough public property
      */
     public $validThrough;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $itinerary public property
+     * @var      string $itinerary public property
      */
     public $itinerary;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $itineraryTranslated public property
+     * @var      string $itineraryTranslated public property
      */
     public $itineraryTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $warnings public property
+     * @var      string $warnings public property
      */
     public $warnings;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $warningsTranslated public property
+     * @var      string $warningsTranslated public property
      */
     public $warningsTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $safety public property
+     * @var      string $safety public property
      */
     public $safety;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $safetyTranslated public property
+     * @var      string $safetyTranslated public property
      */
     public $safetyTranslated;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $latitude public property
+     * @var      string $latitude public property
      */
     public $latitude;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $longitude public property
+     * @var      string $longitude public property
      */
     public $longitude;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $minPax public property
+     * @var      integer $minPax public property
      */
     public $minPax;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $maxPax public property
+     * @var      integer $maxPax public property
      */
     public $maxPax;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var double $basePrice public property
+     * @var      double $basePrice public property
      */
     public $basePrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\CurrencyDetails $currency public property
+     * @var      \BmgApiV2Lib\Models\CurrencyDetails $currency public property
      */
     public $currency;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $isFlatPaxPrice public property
+     * @var      bool $isFlatPaxPrice public property
      */
     public $isFlatPaxPrice;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $reviewCount public property
+     * @var      integer $reviewCount public property
      */
     public $reviewCount;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var double $reviewAverageScore public property
+     * @var      double $reviewAverageScore public property
      */
     public $reviewAverageScore;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $typeName public property
+     * @var      string $typeName public property
      */
     public $typeName;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $typeUuid public property
+     * @var      string $typeUuid public property
      */
     public $typeUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $photosUrl public property
+     * @var      string $photosUrl public property
      */
     public $photosUrl;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $businessHoursFrom public property
+     * @var      string $businessHoursFrom public property
      */
     public $businessHoursFrom;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $businessHoursTo public property
+     * @var      string $businessHoursTo public property
      */
     public $businessHoursTo;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $averageDelivery public property
+     * @var      integer $averageDelivery public property
      */
     public $averageDelivery;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $hotelPickup public property
+     * @var      bool $hotelPickup public property
      */
     public $hotelPickup;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var bool $airportPickup public property
+     * @var      bool $airportPickup public property
      */
     public $airportPickup;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\PhotoDetails[] $photos public property
+     * @var      \BmgApiV2Lib\Models\PhotoDetails[] $photos public property
      */
     public $photos;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\CategoriesData[] $categories public property
+     * @var      \BmgApiV2Lib\Models\CategoriesData[] $categories public property
      */
     public $categories;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\LocationStruct[] $locations public property
+     * @var      \BmgApiV2Lib\Models\LocationStruct[] $locations public property
      */
     public $locations;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $url public property
+     * @var      string $url public property
      */
     public $url;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $staticUrl public property
+     * @var      string $staticUrl public property
      */
     public $staticUrl;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $guideLanguages public property
+     * @var      object $guideLanguages public property
      */
     public $guideLanguages;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\AudioHeadsetLanguage[] $audioHeadsetLanguages public property
+     * @var      \BmgApiV2Lib\Models\AudioHeadsetLanguage[] $audioHeadsetLanguages public property
      */
     public $audioHeadsetLanguages;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\WrittenLanguageDetails[] $writtenLanguages public property
+     * @var      \BmgApiV2Lib\Models\WrittenLanguageDetails[] $writtenLanguages public property
      */
     public $writtenLanguages;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
+     * @var      \BmgApiV2Lib\Models\LinkBasicArray[] $links public property
      */
     public $links;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string           $uuid                     Initialization value for $this->uuid
-     * @param \DateTime        $updatedAt                Initialization value for $this->updatedAt
-     * @param string           $title                    Initialization value for $this->title
-     * @param string           $titleTranslated          Initialization value for $this->titleTranslated
-     * @param string           $description              Initialization value for $this->description
-     * @param string           $descriptionTranslated    Initialization value for $this->descriptionTranslated
-     * @param string           $highlights               Initialization value for $this->highlights
-     * @param string           $highlightsTranslated     Initialization value for $this->highlightsTranslated
-     * @param string           $additionalInfo           Initialization value for $this->additionalInfo
-     * @param string           $additionalInfoTranslated Initialization value for $this->additionalInfoTranslated
-     * @param string           $priceIncludes            Initialization value for $this->priceIncludes
-     * @param string           $priceIncludesTranslated  Initialization value for $this->priceIncludesTranslated
-     * @param string           $priceExcludes            Initialization value for $this->priceExcludes
-     * @param string           $priceExcludesTranslated  Initialization value for $this->priceExcludesTranslated
-     * @param \DateTime        $validFrom                Initialization value for $this->validFrom
-     * @param \DateTime        $validThrough             Initialization value for $this->validThrough
-     * @param string           $itinerary                Initialization value for $this->itinerary
-     * @param string           $itineraryTranslated      Initialization value for $this->itineraryTranslated
-     * @param string           $warnings                 Initialization value for $this->warnings
-     * @param string           $warningsTranslated       Initialization value for $this->warningsTranslated
-     * @param string           $safety                   Initialization value for $this->safety
-     * @param string           $safetyTranslated         Initialization value for $this->safetyTranslated
-     * @param string           $latitude                 Initialization value for $this->latitude
-     * @param string           $longitude                Initialization value for $this->longitude
-     * @param integer          $minPax                   Initialization value for $this->minPax
-     * @param integer          $maxPax                   Initialization value for $this->maxPax
-     * @param double           $basePrice                Initialization value for $this->basePrice
-     * @param CurrencyDetails  $currency                 Initialization value for $this->currency
-     * @param bool             $isFlatPaxPrice           Initialization value for $this->isFlatPaxPrice
-     * @param integer          $reviewCount              Initialization value for $this->reviewCount
-     * @param double           $reviewAverageScore       Initialization value for $this->reviewAverageScore
-     * @param string           $typeName                 Initialization value for $this->typeName
-     * @param string           $typeUuid                 Initialization value for $this->typeUuid
-     * @param string           $photosUrl                Initialization value for $this->photosUrl
-     * @param string           $businessHoursFrom        Initialization value for $this->businessHoursFrom
-     * @param string           $businessHoursTo          Initialization value for $this->businessHoursTo
-     * @param integer          $averageDelivery          Initialization value for $this->averageDelivery
-     * @param bool             $hotelPickup              Initialization value for $this->hotelPickup
-     * @param bool             $airportPickup            Initialization value for $this->airportPickup
-     * @param array            $photos                   Initialization value for $this->photos
-     * @param array            $categories               Initialization value for $this->categories
-     * @param array            $locations                Initialization value for $this->locations
-     * @param string           $url                      Initialization value for $this->url
-     * @param string           $staticUrl                Initialization value for $this->staticUrl
-     * @param object           $guideLanguages           Initialization value for $this->guideLanguages
-     * @param array            $audioHeadsetLanguages    Initialization value for $this->audioHeadsetLanguages
-     * @param array            $writtenLanguages         Initialization value for $this->writtenLanguages
-     * @param array            $links                    Initialization value for $this->links
+     *
+     * @param string          $uuid                     Initialization value for $this->uuid
+     * @param \DateTime       $updatedAt                Initialization value for $this->updatedAt
+     * @param string          $title                    Initialization value for $this->title
+     * @param string          $titleTranslated          Initialization value for $this->titleTranslated
+     * @param string          $description              Initialization value for $this->description
+     * @param string          $descriptionTranslated    Initialization value for $this->descriptionTranslated
+     * @param string          $highlights               Initialization value for $this->highlights
+     * @param string          $highlightsTranslated     Initialization value for $this->highlightsTranslated
+     * @param string          $additionalInfo           Initialization value for $this->additionalInfo
+     * @param string          $additionalInfoTranslated Initialization value for $this->additionalInfoTranslated
+     * @param string          $priceIncludes            Initialization value for $this->priceIncludes
+     * @param string          $priceIncludesTranslated  Initialization value for $this->priceIncludesTranslated
+     * @param string          $priceExcludes            Initialization value for $this->priceExcludes
+     * @param string          $priceExcludesTranslated  Initialization value for $this->priceExcludesTranslated
+     * @param \DateTime       $validFrom                Initialization value for $this->validFrom
+     * @param \DateTime       $validThrough             Initialization value for $this->validThrough
+     * @param string          $itinerary                Initialization value for $this->itinerary
+     * @param string          $itineraryTranslated      Initialization value for $this->itineraryTranslated
+     * @param string          $warnings                 Initialization value for $this->warnings
+     * @param string          $warningsTranslated       Initialization value for $this->warningsTranslated
+     * @param string          $safety                   Initialization value for $this->safety
+     * @param string          $safetyTranslated         Initialization value for $this->safetyTranslated
+     * @param string          $latitude                 Initialization value for $this->latitude
+     * @param string          $longitude                Initialization value for $this->longitude
+     * @param integer         $minPax                   Initialization value for $this->minPax
+     * @param integer         $maxPax                   Initialization value for $this->maxPax
+     * @param double          $basePrice                Initialization value for $this->basePrice
+     * @param CurrencyDetails $currency                 Initialization value for $this->currency
+     * @param bool            $isFlatPaxPrice           Initialization value for $this->isFlatPaxPrice
+     * @param integer         $reviewCount              Initialization value for $this->reviewCount
+     * @param double          $reviewAverageScore       Initialization value for $this->reviewAverageScore
+     * @param string          $typeName                 Initialization value for $this->typeName
+     * @param string          $typeUuid                 Initialization value for $this->typeUuid
+     * @param string          $photosUrl                Initialization value for $this->photosUrl
+     * @param string          $businessHoursFrom        Initialization value for $this->businessHoursFrom
+     * @param string          $businessHoursTo          Initialization value for $this->businessHoursTo
+     * @param integer         $averageDelivery          Initialization value for $this->averageDelivery
+     * @param bool            $hotelPickup              Initialization value for $this->hotelPickup
+     * @param bool            $airportPickup            Initialization value for $this->airportPickup
+     * @param array           $photos                   Initialization value for $this->photos
+     * @param array           $categories               Initialization value for $this->categories
+     * @param array           $locations                Initialization value for $this->locations
+     * @param string          $url                      Initialization value for $this->url
+     * @param string          $staticUrl                Initialization value for $this->staticUrl
+     * @param object          $guideLanguages           Initialization value for $this->guideLanguages
+     * @param array           $audioHeadsetLanguages    Initialization value for $this->audioHeadsetLanguages
+     * @param array           $writtenLanguages         Initialization value for $this->writtenLanguages
+     * @param array           $links                    Initialization value for $this->links
      */
     public function __construct()
     {

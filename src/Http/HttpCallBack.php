@@ -8,24 +8,27 @@
 namespace BmgApiV2Lib\Http;
 
 /**
-* HttpCallBack allows defining callables for pre and post API calls.
-*/
+ * HttpCallBack allows defining callables for pre and post API calls.
+ */
 class HttpCallBack
 {
     /**
      * Callable for on-before event of API calls
+     *
      * @var callable
      */
     private $onBeforeRequest = null;
 
     /**
      * Callable for on-after event of API calls
+     *
      * @var callable
      */
     private $onAfterRequest = null;
 
     /**
      * Create a new HttpCallBack instance
+     *
      * @param callable|null $onBeforeRequest Called before an API call
      * @param callable|null $onAfterRequest  Called after an API call
      */
@@ -37,6 +40,7 @@ class HttpCallBack
 
     /**
      * Set on-before event callback
+     *
      * @param callable $func On-before event callable
      */
     public function setOnBeforeRequest(callable $func)
@@ -46,6 +50,7 @@ class HttpCallBack
 
     /**
      * Get On-before API call event callable
+     *
      * @return callable Callable
      */
     public function getOnBeforeRequest()
@@ -55,6 +60,7 @@ class HttpCallBack
 
     /**
      * Set On-after API call event callable
+     *
      * @param callable $func On-after event callable
      */
     public function setOnAfterRequest(callable $func)
@@ -64,6 +70,7 @@ class HttpCallBack
 
     /**
      * Get On-After API call event callable
+     *
      * @return callable On-after event callable
      */
     public function getOnAfterRequest()
@@ -73,7 +80,8 @@ class HttpCallBack
 
     /**
      * Call on-before event callable
-     * @param  HttpRequest $httpRequest HttpRequest for this call
+     *
+     * @param HttpRequest $httpRequest HttpRequest for this call
      */
     public function callOnBeforeRequest(HttpRequest $httpRequest)
     {
@@ -84,7 +92,8 @@ class HttpCallBack
 
     /**
      * Call on-after event callable
-     * @param  HttpRequest $httpRequest HttpRequest for this call
+     *
+     * @param HttpRequest $httpRequest HttpRequest for this call
      */
     public function callOnAfterRequest(HttpContext $httpContext)
     {

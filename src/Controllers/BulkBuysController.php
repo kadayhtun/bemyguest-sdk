@@ -20,17 +20,20 @@ use BmgApiV2Lib\Servers;
 use Unirest\Request;
 
 /**
+ *
  * @todo Add a general description for this controller.
  */
 class BulkBuysController extends BaseController
 {
     /**
+     *
      * @var BulkBuysController The reference to *Singleton* instance of this class
      */
     private static $instance;
 
     /**
      * Returns the *Singleton* instance of this class.
+     *
      * @return BulkBuysController The *Singleton* instance.
      */
     public static function getInstance()
@@ -144,7 +147,7 @@ class BulkBuysController extends BaseController
      *
      * Please remember the number of adults/children/seniors has to match one of the available bulk set.
      *
-     * @param Models\PostBulkBuyRequestRequest $body Request payload (json)
+     * @param  Models\PostBulkBuyRequestRequest $body Request payload (json)
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */

@@ -10,40 +10,46 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class PriceDetails implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $adults public property
+     * @var      object $adults public property
      */
     public $adults;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $children public property
+     * @var      object $children public property
      */
     public $children;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var object $seniors public property
+     * @var      object $seniors public property
      */
     public $seniors;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var array $cancellationPolicy public property
+     * @var      array $cancellationPolicy public property
      */
     public $cancellationPolicy;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array  $adults             Initialization value for $this->adults
      * @param object $children           Initialization value for $this->children
      * @param object $seniors            Initialization value for $this->seniors

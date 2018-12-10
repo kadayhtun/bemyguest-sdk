@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class Language implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $name public property
+     * @var      string $name public property
      */
     public $name;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $code public property
+     * @var      string $code public property
      */
     public $code;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $name Initialization value for $this->name
      * @param string $code Initialization value for $this->code
      * @param string $uuid Initialization value for $this->uuid

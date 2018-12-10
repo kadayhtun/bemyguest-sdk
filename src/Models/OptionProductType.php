@@ -10,27 +10,32 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class OptionProductType implements JsonSerializable
 {
     /**
+     *
      * @var string $uuid
      */
     public $uuid;
 
     /**
+     *
      * @var boolean $required
      */
     public $required;
 
     /**
+     *
      * @var integer $price
      */
     public $price;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $uuid      Initialization value for $this->uuid
      * @param string $startTime Initialization value for $this->startTime
      * @param string $endTime   Initialization value for $this->endTime

@@ -10,19 +10,21 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
- *State details
+ * State details
  */
 class States implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var \BmgApiV2Lib\Models\State[] $data public property
+     * @var      \BmgApiV2Lib\Models\State[] $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array $data Initialization value for $this->data
      */
     public function __construct()

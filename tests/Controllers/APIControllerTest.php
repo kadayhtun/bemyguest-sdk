@@ -15,11 +15,13 @@ use BmgApiV2Lib\Tests\HttpCallBackCatcher;
 class APIControllerTest extends TestCase
 {
     /**
+     *
      * @var \BmgApiV2Lib\Controllers\APIController Controller instance
      */
     protected static $controller;
 
     /**
+     *
      * @var \BmgApiV2Lib\Tests\HttpCallBackCatcher Callback
      */
     protected $httpResponse;

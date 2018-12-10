@@ -10,26 +10,30 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class BookingOptionsEmptyObject implements JsonSerializable
 {
     /**
      * Options per pax array
+     *
      * @required
-     * @var array $perPax public property
+     * @var      array $perPax public property
      */
     public $perPax;
 
     /**
      * Options per booking array
+     *
      * @required
-     * @var array $perBooking public property
+     * @var      array $perBooking public property
      */
     public $perBooking;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array $perPax     Initialization value for $this->perPax
      * @param array $perBooking Initialization value for $this->perBooking
      */

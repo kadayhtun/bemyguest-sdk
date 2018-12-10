@@ -20,17 +20,20 @@ use BmgApiV2Lib\Servers;
 use Unirest\Request;
 
 /**
+ *
  * @todo Add a general description for this controller.
  */
 class APIController extends BaseController
 {
     /**
+     *
      * @var APIController The reference to *Singleton* instance of this class
      */
     private static $instance;
 
     /**
      * Returns the *Singleton* instance of this class.
+     *
      * @return APIController The *Singleton* instance.
      */
     public static function getInstance()
@@ -45,7 +48,7 @@ class APIController extends BaseController
     /**
      * Config object with location, timezones, base URL for images and many more.
      *
-     * @param string $fields (optional) coma separated list of keys (fields) to be returned
+     * @param  string $fields (optional) coma separated list of keys (fields) to be returned
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */

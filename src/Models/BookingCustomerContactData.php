@@ -10,47 +10,54 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class BookingCustomerContactData implements JsonSerializable
 {
     /**
      * email
+     *
      * @required
-     * @var string $email public property
+     * @var      string $email public property
      */
     public $email;
 
     /**
      * First name
+     *
      * @required
-     * @var string $firstName public property
+     * @var      string $firstName public property
      */
     public $firstName;
 
     /**
      * Last name
+     *
      * @required
-     * @var string $lastName public property
+     * @var      string $lastName public property
      */
     public $lastName;
 
     /**
      * Phone number
+     *
      * @required
-     * @var string $phone public property
+     * @var      string $phone public property
      */
     public $phone;
 
     /**
      * Salutation
+     *
      * @required
-     * @var string $salutation public property
+     * @var      string $salutation public property
      */
     public $salutation;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $email      Initialization value for $this->email
      * @param string $firstName  Initialization value for $this->firstName
      * @param string $lastName   Initialization value for $this->lastName

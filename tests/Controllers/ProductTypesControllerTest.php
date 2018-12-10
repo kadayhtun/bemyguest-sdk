@@ -16,16 +16,19 @@ use BmgApiV2Lib\Tests\HttpCallBackCatcher;
 class ProductTypesControllerTest extends TestCase
 {
     /**
+     *
      * @var \BmgApiV2Lib\Controllers\ProductsController Controller instance
      */
     protected static $controller;
 
     /**
+     *
      * @var \BmgApiV2Lib\Models\ProductList Callback
      */
     protected static $product;
 
     /**
+     *
      * @var \BmgApiV2Lib\Tests\HttpCallBackCatcher Callback
      */
     protected $httpResponse;
@@ -58,7 +61,7 @@ class ProductTypesControllerTest extends TestCase
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
 
-         try {
+        try {
             $result = self::$controller->getProductTypesForProduct(
                 self::$product->uuid
             );
@@ -76,6 +79,7 @@ class ProductTypesControllerTest extends TestCase
     }
 
     /**
+     *
      * @depends testGetProductTypesForProduct
      */
     public function testGetProductTypeDetails()
@@ -98,6 +102,7 @@ class ProductTypesControllerTest extends TestCase
     }
 
     /**
+     *
      * @depends testGetProductTypeDetails
      */
     public function testGetCheckAvailabilityAndPrice()
@@ -121,6 +126,7 @@ class ProductTypesControllerTest extends TestCase
     }
 
     /**
+     *
      * @depends testGetProductTypesForProduct
      */
     public function testGetPrices()

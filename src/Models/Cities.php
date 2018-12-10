@@ -10,19 +10,22 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class Cities implements JsonSerializable
 {
     /**
      * Data object
+     *
      * @required
-     * @var \BmgApiV2Lib\Models\City[] $data public property
+     * @var      \BmgApiV2Lib\Models\City[] $data public property
      */
     public $data;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param array $data Initialization value for $this->data
      */
     public function __construct()

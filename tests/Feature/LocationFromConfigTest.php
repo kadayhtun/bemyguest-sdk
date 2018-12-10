@@ -10,6 +10,7 @@ use BmgApiV2Lib\Models\Countries;
 class LocationFromConfigTest extends TestCase
 {
     /**
+     *
      * @var \BmgApiV2Lib\Models\Locations Locations response
      */
     protected static $locations;

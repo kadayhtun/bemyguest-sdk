@@ -10,117 +10,134 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class User implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $name public property
+     * @var      string $name public property
      */
     public $name;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $email public property
+     * @var      string $email public property
      */
     public $email;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $continueUrl public property
+     * @var      string $continueUrl public property
      */
     public $continueUrl;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $notifyUrl public property
+     * @var      string $notifyUrl public property
      */
     public $notifyUrl;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $defaultPagination public property
+     * @var      integer $defaultPagination public property
      */
     public $defaultPagination;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $defaultSortBy public property
+     * @var      string $defaultSortBy public property
      */
     public $defaultSortBy;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $defaultCurrencyUuid public property
+     * @var      string $defaultCurrencyUuid public property
      */
     public $defaultCurrencyUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $defaultCurrencyCode public property
+     * @var      string $defaultCurrencyCode public property
      */
     public $defaultCurrencyCode;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $defaultLanguageUuid public property
+     * @var      string $defaultLanguageUuid public property
      */
     public $defaultLanguageUuid;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $defaultLanguageCode public property
+     * @var      string $defaultLanguageCode public property
      */
     public $defaultLanguageCode;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var double $walletBalance public property
+     * @var      double $walletBalance public property
      */
     public $walletBalance;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $walletBlockedBalance public property
+     * @var      integer $walletBlockedBalance public property
      */
     public $walletBlockedBalance;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var double $walletAvailableBalance public property
+     * @var      double $walletAvailableBalance public property
      */
     public $walletAvailableBalance;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var integer $walletAlertValue public property
+     * @var      integer $walletAlertValue public property
      */
     public $walletAlertValue;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string  $name                   Initialization value for $this->name
      * @param string  $email                  Initialization value for $this->email
      * @param string  $uuid                   Initialization value for $this->uuid

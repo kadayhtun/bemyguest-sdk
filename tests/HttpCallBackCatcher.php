@@ -16,12 +16,14 @@ class HttpCallBackCatcher extends HttpCallBack
 {
     /**
      * Http request
+     *
      * @var BmgApiV2Lib\Http\HttpRequest
      */
     private $request;
 
     /**
      * Http Response
+     *
      * @var BmgApiV2Lib\Http\HttpResponse
      */
     private $response;
@@ -32,14 +34,17 @@ class HttpCallBackCatcher extends HttpCallBack
     public function __construct()
     {
         $instance = $this;
-        parent::__construct(null, function ($httpContext) use ($instance) {
-            $instance->request = $httpContext->getRequest();
-            $instance->response = $httpContext->getResponse();
-        });
+        parent::__construct(
+            null, function ($httpContext) use ($instance) {
+                $instance->request = $httpContext->getRequest();
+                $instance->response = $httpContext->getResponse();
+            }
+        );
     }
 
     /**
      * Get the HTTP Request object associated with this API call
+     *
      * @return BmgApiV2Lib\Http\HttpRequest
      */
     public function getRequest()
@@ -49,6 +54,7 @@ class HttpCallBackCatcher extends HttpCallBack
 
     /**
      * Get the HTTP Response object associated with this API call
+     *
      * @return BmgApiV2Lib\Http\HttpResponse
      */
     public function getResponse()

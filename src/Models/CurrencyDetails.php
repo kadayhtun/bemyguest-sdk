@@ -10,33 +10,38 @@ namespace BmgApiV2Lib\Models;
 use JsonSerializable;
 
 /**
+ *
  * @todo Write general description for this model
  */
 class CurrencyDetails implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $code public property
+     * @var      string $code public property
      */
     public $code;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $symbol public property
+     * @var      string $symbol public property
      */
     public $symbol;
 
     /**
-     * @todo Write general description for this property
+     *
+     * @todo     Write general description for this property
      * @required
-     * @var string $uuid public property
+     * @var      string $uuid public property
      */
     public $uuid;
 
     /**
      * Constructor to set initial or default values of member properties
+     *
      * @param string $code   Initialization value for $this->code
      * @param string $symbol Initialization value for $this->symbol
      * @param string $uuid   Initialization value for $this->uuid

@@ -16,22 +16,24 @@ use \apimatic\jsonmapper\JsonMapper;
 use Unirest\Request;
 
 /**
-* Base controller
-*/
+ * Base controller
+ */
 class BaseController
 {
     /**
      * HttpCallBack instance associated with this controller
+     *
      * @var HttpCallBack
      */
     private $httpCallBack = null;
 
      /**
-     * Constructor that sets the timeout of requests
-     */
+      * Constructor that sets the timeout of requests
+      */
 
     /**
      * Set HttpCallBack for this controller
+     *
      * @param HttpCallBack $httpCallBack Http Callbacks called before/after each API call
      */
     public function setHttpCallBack(HttpCallBack $httpCallBack)
@@ -41,6 +43,7 @@ class BaseController
 
     /**
      * Get HttpCallBack for this controller
+     *
      * @return HttpCallBack The HttpCallBack object set for this controller
      */
     public function getHttpCallBack()
@@ -50,6 +53,7 @@ class BaseController
 
     /**
      * Get a new JsonMapper instance for mapping objects
+     *
      * @return \apimatic\jsonmapper\JsonMapper JsonMapper instance
      */
     protected function getJsonMapper()
