@@ -3,6 +3,7 @@
 namespace BmgApiV2Lib;
 
 use BadMethodCallException;
+use Illuminate\Support\Str;
 use BmgApiV2Lib\Http\HttpCallBack;
 
 class BeMyGuest
@@ -12,6 +13,8 @@ class BeMyGuest
     protected $afterRequestHook;
 
     protected $beforeRequestHook;
+
+    protected $name;
 
     /**
      * Initialise with authentication and environment.
@@ -26,6 +29,11 @@ class BeMyGuest
         Configuration::$environment = $environment ?? Environments::DEMO;
 
         $this->client = new BmgApiV2Client($xAuthorization);
+    }
+
+    public function name()
+    {
+        return $this->name;
     }
 
     public function setDefaultAfterRequestHook(callable $afterRequestHook)
@@ -47,6 +55,8 @@ class BeMyGuest
         $method = substr($name, 0, 3) === 'get'
             ? $name
             : 'get' . ucfirst($name);
+
+        $this->name = Str::snake(ltrim($method, 'get'));
 
         if (method_exists($this->client, $method)) {
             $controller = $this->client->$method();
