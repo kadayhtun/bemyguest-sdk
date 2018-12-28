@@ -7,17 +7,18 @@
 
 namespace BmgApiV2Lib\Controllers;
 
-use BmgApiV2Lib\APIException;
-use BmgApiV2Lib\APIHelper;
-use BmgApiV2Lib\Configuration;
+use Unirest\Request;
 use BmgApiV2Lib\Models;
+use BmgApiV2Lib\Servers;
+use BmgApiV2Lib\APIHelper;
+use BmgApiV2Lib\Utils\Arr;
 use BmgApiV2Lib\Exceptions;
-use BmgApiV2Lib\Http\HttpRequest;
-use BmgApiV2Lib\Http\HttpResponse;
+use BmgApiV2Lib\APIException;
+use BmgApiV2Lib\Configuration;
 use BmgApiV2Lib\Http\HttpMethod;
 use BmgApiV2Lib\Http\HttpContext;
-use BmgApiV2Lib\Servers;
-use Unirest\Request;
+use BmgApiV2Lib\Http\HttpRequest;
+use BmgApiV2Lib\Http\HttpResponse;
 
 /**
  *
@@ -385,7 +386,6 @@ class BookingsController extends BaseController
     public function createABooking(
         $body
     ) {
-
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
 
@@ -432,8 +432,194 @@ class BookingsController extends BaseController
         //handle errors defined at the API level
         $this->validateResponse($_httpResponse, $_httpContext);
 
+
+        //handle file upload option if it present.
+        if ($this->handleFileUploadOptions($_httpContext)) {
+            throw new APIException('Provided file can not upload.', $_httpContext);
+        }
+
         $mapper = $this->getJsonMapper();
 
         return $mapper->mapClass($response->body, 'BmgApiV2Lib\\Models\\CreateABookingResponse');
+    }
+
+    /**
+     * Upload file for option's inputType of image & file.
+     *
+     * @param  string  $bookingUuid Date start YYYY-MM-DD
+     * @param  string  $optionUuid  Date start YYYY-MM-DD
+     * @param  string  $type    Booking contact first name
+     * @return mixed response from the API call
+     * @throws APIException Thrown if API call fails
+     */
+    public function optionFileUpload(
+        $bookingUuid,
+        $optionUuid,
+        $type
+    ) {
+        //the base uri for api requests
+        $_queryBuilder = Configuration::getBaseUri();
+
+        //prepare query string for API call
+        $_queryBuilder = $_queryBuilder . '/v2/bookings/{uuid}/options/{option_uuid}';
+
+        //process optional query parameters
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters(
+            $_queryBuilder,
+            array(
+                'uuid' => $bookingUuid,
+                'option_uuid' => $optionUuid,
+            )
+        );
+
+        APIHelper::appendUrlWithQueryParameters(
+            $_queryBuilder,
+            [
+                'type' => $type
+            ]
+        );
+
+        //validate and preprocess url
+        $_queryUrl = APIHelper::cleanUrl($_queryBuilder);
+
+        //prepare headers
+        $_headers = array(
+            'user-agent' => 'APIMATIC 2.0',
+            'Accept' => 'application/json',
+            'X-Authorization' => Configuration::$xAuthorization
+        );
+
+        //call on-before Http callback
+        $_httpRequest = new HttpRequest(HttpMethod::PUT, $_headers, $_queryUrl);
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
+        }
+
+        //and invoke the API call request to fetch the response
+        $response = Request::put($_queryUrl, $_headers);
+
+        $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
+        $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
+
+        //call on-after Http callback
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
+        }
+
+        //Error handling using HTTP status codes
+        if ($response->code == 400) {
+            throw new APIException('Invalid parameters', $_httpContext);
+        }
+
+        if ($response->code == 401) {
+            throw new APIException('Unauthorized', $_httpContext);
+        }
+
+        if ($response->code == 404) {
+            throw new APIException('Booking not found', $_httpContext);
+        }
+
+        //handle errors defined at the API level
+        $this->validateResponse($_httpResponse, $_httpContext);
+
+        return $_httpContext;
+    }
+
+    /**
+     * Handle file updload options of booking create payload.
+     *
+     * @param  array $context
+     * @return bool
+     */
+    protected function handleFileUploadOptions(HttpContext $context)
+    {
+        $body = json_decode($context->getResponse()->getRawBody(), true);
+
+        //take actions only file upload options are provided.
+        if (!empty($body['options'])) {
+            $options = $this->getFileUploadOptions($body);
+
+            foreach ($options as $option) {
+                $this->fileUpload($option['value']);
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Get file-upload options among given options.
+     *
+     * @param  array $options
+     * @return array
+     */
+    protected function getFileUploadOptions($body)
+    {
+        $result = [];
+        $options = Arr::flatten($body['options']);
+
+        if (!$options) {
+            return $result;
+        }
+
+        // get all options from booked product
+        $productTypeDetail = ProductTypesController::getInstance()
+            ->getProductTypeDetails($body['productTypeUuid'])
+            ->data;
+
+        $fileUploadOptions = array_filter(
+            Arr::flatten($productTypeDetail->options),
+            function ($option) use ($uuids) {
+                return $option['inputType'] == 7 || $option['inputType'] == 8;
+            }
+        );
+
+        if (!$fileUploadOptions) {
+            return $result;
+        }
+
+        // interset with reqeusted option
+        $requestedFileUploadOptions = array_filter($options, function ($option) use ($fileUploadOptions) {
+            $uuids = array_map($fileUploadOptions, function ($fuOption) {
+                return $fuOption['uuid'];
+            });
+
+            return in_array($option['uuid'], $uuids);
+        });
+
+        return array_values($requestedFileUploadOptions);
+    }
+
+    /**
+     * Upload file.
+     *
+     * @param string $url
+     * @return void
+     */
+    protected function fileUpload($url)
+    {
+        if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
+            $data = file_get_contents($url);
+            $tmp = Configuration::basePath . '/tmp';
+            $fileName = pathinfo($data, PATHINFO_FILENAME);
+            $file = $tmp . '/' . $fileName;
+
+            $written = file_put_contents($file, $data);
+
+            if ($written !== false) {
+                $this->directFileUploadRequest($file);
+            }
+        }
+    }
+
+    /**
+     * Direct file upload request to BeMyGuest API.
+     *
+     * @param string $file
+     * @return void
+     */
+    protected function directFileUploadRequest($file)
+    {
+        //
     }
 }
