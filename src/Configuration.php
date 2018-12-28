@@ -28,6 +28,13 @@ class Configuration
     public static $xAuthorization = '';
 
     /**
+     * Root path of the project.
+     *
+     * @var string
+     */
+    public static $basePath = __DIR__ . "/..";
+
+    /**
      * Get the base uri for a given server in the current environment
      *
      * @param  string $server Server name
