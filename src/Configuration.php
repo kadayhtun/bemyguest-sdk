@@ -61,8 +61,5 @@ class Configuration
         Environments::LIVE_PRODUCTION_ => [
             Servers::BMG => 'https://api.bemyguest.com.sg',
         ],
-        Environments::ANONYMOUS => [
-            Servers::BMG => 'https://private-anon-a39178e256-bmglabsapi.apiary-mock.com',
-        ],
     ];
 }

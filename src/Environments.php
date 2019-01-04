@@ -21,9 +21,4 @@ class Environments
      * Live API
      */
     const LIVE_PRODUCTION_ = "Live (production)";
-
-    /**
-     * Anonymous server (no api key)
-     */
-    const ANONYMOUS = "Anonymous";
 }

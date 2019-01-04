@@ -16,11 +16,13 @@ class BmgApiV2Client
 {
     /**
      * Constructor with authentication and configuration parameters
+     *
+     * @param string $xAuthorization
      */
     public function __construct(
-        $xAuthorization = null
+        $xAuthorization
     ) {
-        Configuration::$xAuthorization = $xAuthorization ? $xAuthorization : Configuration::$xAuthorization;
+        Configuration::$xAuthorization = $xAuthorization;
     }
     /**
      * Singleton access to BulkBuys controller
