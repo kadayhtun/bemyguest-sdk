@@ -66,7 +66,7 @@ class ProductsControllerTest extends TestCase
 
     public function testGetProductListWithParams()
     {
-        $locations = (new BmgApiV2Client)
+        $locations = self::getDemoBeMyGuestClient()
             ->getClient()
             ->getConfig()
             ->data

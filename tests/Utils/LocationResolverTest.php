@@ -11,7 +11,7 @@ class LocationResolverTest extends TestCase
 {
     public function testFlatten()
     {
-        $locations = (new BmgApiV2Client)
+        $locations = self::getDemoBeMyGuestClient()
             ->getClient()
             ->getConfig()
             ->data
