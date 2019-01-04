@@ -1,14 +1,14 @@
 {
-    "name": "chitminow/laravel-bmgv2",
+    "name": "OwayTripGroup/laravel-bmgv2",
     "type": "library",
     "description": "BeMyGuest API v2 with laravel wrapper.",
     "keywords": ["BeMyGuest API v2.0","API","SDK"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Pyae Soe Moe",
-            "email": "pyaesoemoe@owaytrip.com",
-            "role": "API Dev"
+            "name": "OwayTripGroup",
+            "email": "engineering@owaytrip.com",
+            "role": "Organization"
         }
     ],
     "require": {
