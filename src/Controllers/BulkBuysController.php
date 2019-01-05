@@ -66,7 +66,7 @@ class BulkBuysController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -114,7 +114,7 @@ class BulkBuysController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -166,7 +166,7 @@ class BulkBuysController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'content-type'  => 'application/json; charset=utf-8',
             'X-Authorization' => Configuration::$xAuthorization

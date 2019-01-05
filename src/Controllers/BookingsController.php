@@ -106,7 +106,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'      => 'APIMATIC 2.0',
+            'user-agent'      => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'          => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -192,7 +192,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -265,7 +265,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -334,7 +334,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -397,7 +397,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'content-type'  => 'application/json; charset=utf-8',
             'X-Authorization' => Configuration::$xAuthorization
@@ -448,7 +448,7 @@ class BookingsController extends BaseController
      *
      * @param  string  $bookingUuid Date start YYYY-MM-DD
      * @param  string  $optionUuid  Date start YYYY-MM-DD
-     * @param  string  $type    Booking contact first name
+     * @param  string  $type    File type
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -484,7 +484,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array(
-            'user-agent' => 'APIMATIC 2.0',
+            'user-agent' => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept' => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -620,6 +620,11 @@ class BookingsController extends BaseController
      */
     protected function directFileUploadRequest($file)
     {
-        //
+        // upload given file to bemyguest api
+        
+
+        // remove file if success, retry otherwise with limited bounce
+
+        // throw error if limit exceeds
     }
 }
