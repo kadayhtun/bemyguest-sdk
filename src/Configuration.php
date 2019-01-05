@@ -35,6 +35,13 @@ class Configuration
     public static $basePath = __DIR__ . "/..";
 
     /**
+     * User agent path of the project.
+     *
+     * @var string
+     */
+    public static $userAgent = "APIMATIC 2.0";
+
+    /**
      * Get the base uri for a given server in the current environment
      *
      * @param  string $server Server name

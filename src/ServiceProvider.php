@@ -44,11 +44,16 @@ class ServiceProvider extends BaseProvider
         $this->app->singleton(
             'bemyguest',
             function ($app) {
+                $config = $app['config']['bemyguest'];
                 $env = $app->environment('production')
                 ? Environments::LIVE_PRODUCTION_
                 : Environments::DEMO;
 
-                return new BeMyGuest($app['config']['bemyguest']['key'], $env);
+                if ($config['user_agent']) {
+                    Configuration::$userAgent = $config['user_agent'];
+                }
+
+                return new BeMyGuest($config['key'], $env);
             }
         );
     }
