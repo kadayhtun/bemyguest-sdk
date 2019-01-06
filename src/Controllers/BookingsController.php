@@ -106,7 +106,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'      => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent'      => 'APIMATIC 2.0',
             'Accept'          => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -192,7 +192,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -265,7 +265,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -334,7 +334,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -397,7 +397,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent'    => 'APIMATIC 2.0',
             'Accept'        => 'application/json',
             'content-type'  => 'application/json; charset=utf-8',
             'X-Authorization' => Configuration::$xAuthorization
@@ -434,12 +434,11 @@ class BookingsController extends BaseController
 
 
         //handle file upload option if it present.
-        if ($this->handleFileUploadOptions($_httpContext)) {
+        if (!$this->handleFileUploadOptions($_httpContext)) {
             throw new APIException('Provided file can not upload.', $_httpContext);
         }
 
         $mapper = $this->getJsonMapper();
-
         return $mapper->mapClass($response->body, 'BmgApiV2Lib\\Models\\CreateABookingResponse');
     }
 
@@ -448,7 +447,7 @@ class BookingsController extends BaseController
      *
      * @param  string  $bookingUuid Date start YYYY-MM-DD
      * @param  string  $optionUuid  Date start YYYY-MM-DD
-     * @param  string  $type    File type
+     * @param  string  $type    Booking contact first name
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
@@ -484,7 +483,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array(
-            'user-agent' => \BmgApiV2Lib\Configuration::$userAgent,
+            'user-agent' => 'APIMATIC 2.0',
             'Accept' => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -533,14 +532,14 @@ class BookingsController extends BaseController
      */
     protected function handleFileUploadOptions(HttpContext $context)
     {
-        $body = json_decode($context->getResponse()->getRawBody(), true);
+        $body = json_decode($context->getResponse()->getRawBody(), true);      
 
         //take actions only file upload options are provided.
-        if (!empty($body['options'])) {
+        if (!empty($body['data']['options'])) {
             $options = $this->getFileUploadOptions($body);
-
+            $bookingUUid = $body['data']['uuid'];
             foreach ($options as $option) {
-                $this->fileUpload($option['value']);
+                $this->fileUpload($bookingUUid,$option['uuid'],$option['value'],$body);
             }
         }
 
@@ -556,7 +555,8 @@ class BookingsController extends BaseController
     protected function getFileUploadOptions($body)
     {
         $result = [];
-        $options = Arr::flatten($body['options']);
+        // $options = Arr::flatten($body['data']['options']);
+        $options = $body['data']['options'];
 
         if (!$options) {
             return $result;
@@ -564,13 +564,13 @@ class BookingsController extends BaseController
 
         // get all options from booked product
         $productTypeDetail = ProductTypesController::getInstance()
-            ->getProductTypeDetails($body['productTypeUuid'])
+            ->getProductTypeDetails($body['data']['productTypeUuid'])
             ->data;
 
         $fileUploadOptions = array_filter(
             Arr::flatten($productTypeDetail->options),
-            function ($option) use ($uuids) {
-                return $option['inputType'] == 7 || $option['inputType'] == 8;
+            function ($option){
+                return $option->inputType == 7 || $option->inputType == 8;
             }
         );
 
@@ -578,11 +578,13 @@ class BookingsController extends BaseController
             return $result;
         }
 
+        $fileUploadOptions = json_decode(json_encode($fileUploadOptions),true);
         // interset with reqeusted option
+
         $requestedFileUploadOptions = array_filter($options, function ($option) use ($fileUploadOptions) {
-            $uuids = array_map($fileUploadOptions, function ($fuOption) {
+            $uuids = array_map(function ($fuOption) {
                 return $fuOption['uuid'];
-            });
+            },$fileUploadOptions);
 
             return in_array($option['uuid'], $uuids);
         });
@@ -596,18 +598,18 @@ class BookingsController extends BaseController
      * @param string $url
      * @return void
      */
-    protected function fileUpload($url)
+    protected function fileUpload($bookingUUid,$optionUuid,$url)
     {
         if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
             $data = file_get_contents($url);
-            $tmp = Configuration::basePath . '/tmp';
-            $fileName = pathinfo($data, PATHINFO_FILENAME);
-            $file = $tmp . '/' . $fileName;
+            $tmp = Configuration::$basePath . '/tmp';
+            $fileName = pathinfo($url, PATHINFO_FILENAME);
+            $fileExtension = pathinfo($url, PATHINFO_EXTENSION);
+            $file = $tmp . '/' . $fileName . '.' . $fileExtension;
 
             $written = file_put_contents($file, $data);
-
             if ($written !== false) {
-                $this->directFileUploadRequest($file);
+                $this->directFileUploadRequest($bookingUUid,$optionUuid,$file);
             }
         }
     }
@@ -618,13 +620,12 @@ class BookingsController extends BaseController
      * @param string $file
      * @return void
      */
-    protected function directFileUploadRequest($file)
-    {
-        // upload given file to bemyguest api
-        
-
-        // remove file if success, retry otherwise with limited bounce
-
-        // throw error if limit exceeds
+    protected function directFileUploadRequest($bookingUUid,$optionUuid,$file)
+    {        
+        $type = pathinfo($file, PATHINFO_EXTENSION); // get file extension
+        $context = $this->optionFileUpload($bookingUUid,$optionUuid,$type);
+        if ($context->getResponse()->getStatusCode() == 201){
+            unlink($file);
+        }
     }
 }
