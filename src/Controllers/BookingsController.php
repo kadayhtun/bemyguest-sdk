@@ -106,7 +106,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'      => 'APIMATIC 2.0',
+            'user-agent'      => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'          => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -192,7 +192,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -265,7 +265,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -334,7 +334,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -397,7 +397,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept'        => 'application/json',
             'content-type'  => 'application/json; charset=utf-8',
             'X-Authorization' => Configuration::$xAuthorization
@@ -454,7 +454,8 @@ class BookingsController extends BaseController
     public function optionFileUpload(
         $bookingUuid,
         $optionUuid,
-        $type
+        $type,
+        $rawContent
     ) {
         //the base uri for api requests
         $_queryBuilder = Configuration::getBaseUri();
@@ -483,7 +484,7 @@ class BookingsController extends BaseController
 
         //prepare headers
         $_headers = array(
-            'user-agent' => 'APIMATIC 2.0',
+            'user-agent' => \BmgApiV2Lib\Configuration::$userAgent,
             'Accept' => 'application/json',
             'X-Authorization' => Configuration::$xAuthorization
         );
@@ -494,9 +495,9 @@ class BookingsController extends BaseController
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
-        //and invoke the API call request to fetch the response
-        $response = Request::put($_queryUrl, $_headers);
-
+        //and invoke the API call request to fetch the response        
+        $response = Request::put($_queryUrl, $_headers, $rawContent);
+        
         $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
 
@@ -601,15 +602,15 @@ class BookingsController extends BaseController
     protected function fileUpload($bookingUUid,$optionUuid,$url)
     {
         if (filter_var($url, FILTER_VALIDATE_URL) !== false) {
-            $data = file_get_contents($url);
+            $rawContent = file_get_contents($url);
             $tmp = Configuration::$basePath . '/tmp';
             $fileName = pathinfo($url, PATHINFO_FILENAME);
             $fileExtension = pathinfo($url, PATHINFO_EXTENSION);
             $file = $tmp . '/' . $fileName . '.' . $fileExtension;
 
-            $written = file_put_contents($file, $data);
+            $written = file_put_contents($file, $rawContent);
             if ($written !== false) {
-                $this->directFileUploadRequest($bookingUUid,$optionUuid,$file);
+                $this->directFileUploadRequest($bookingUUid,$optionUuid,$file,$rawContent);
             }
         }
     }
@@ -620,10 +621,10 @@ class BookingsController extends BaseController
      * @param string $file
      * @return void
      */
-    protected function directFileUploadRequest($bookingUUid,$optionUuid,$file)
+    protected function directFileUploadRequest($bookingUUid,$optionUuid,$file,$rawContent)
     {        
         $type = pathinfo($file, PATHINFO_EXTENSION); // get file extension
-        $context = $this->optionFileUpload($bookingUUid,$optionUuid,$type);
+        $context = $this->optionFileUpload($bookingUUid,$optionUuid,$type,$rawContent);
         if ($context->getResponse()->getStatusCode() == 201){
             unlink($file);
         }
