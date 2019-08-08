@@ -1,5 +1,5 @@
 {
-    "name": "oway-trip-group/laravel-bmgv2",
+    "name": "oway-trip-group/bemyguest-sdk",
     "type": "library",
     "description": "BeMyGuest API v2 with laravel wrapper.",
     "keywords": ["BeMyGuest API v2.0","API","SDK"],
