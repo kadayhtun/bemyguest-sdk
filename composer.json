@@ -1,14 +1,14 @@
 {
     "name": "destination-developer/bemyguest-sdk",
     "type": "library",
-    "description": "BeMyGuest API v2 with laravel wrapper.",
+    "description": "BeMyGuest API version 2 for api-destination",
     "keywords": ["BeMyGuest API v2.0","API","SDK"],
     "license": "MIT",
     "authors": [
         {
-            "name": "OwayTripGroup",
-            "email": "engineering@owaytrip.com",
-            "role": "Organization"
+            "name": "Mr. Wai Hyn Htun",
+            "email": "waihynhtun@owaytrip.com",
+            "role": "Personal"
         }
     ],
     "require": {
