@@ -105,6 +105,8 @@ class ProdutTypeDetailsData implements JsonSerializable
      */
     public $allowAdults;
 
+    public $blahblah;
+
     /**
      * @todo Write general description for this property
      * @required
