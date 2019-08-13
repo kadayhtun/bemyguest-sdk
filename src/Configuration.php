@@ -39,7 +39,7 @@ class Configuration
      *
      * @var string
      */
-    public static $userAgent = "APIMATIC 2.0";
+    public static $userAgent = "Oway APIv2";
 
     /**
      * Get the base uri for a given server in the current environment
