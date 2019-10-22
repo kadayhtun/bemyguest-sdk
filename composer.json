@@ -1,13 +1,13 @@
 {
-    "name": "destination-developer/bemyguest-sdk",
+    "name": "tour-develop/bmgv2-sdk",
     "type": "library",
-    "description": "BeMyGuest API version 2 for api-destination",
+    "description": "BMG API version 2",
     "keywords": ["BeMyGuest API v2.0","API","SDK"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Sai.Wai Hyn Htun (Sagi)",
-            "email": "waihynhtun@owaytrip.com",
+            "name": "Kaday",
+            "email": "kaday@owaytrip.com",
             "role": "Personal"
         }
     ],
