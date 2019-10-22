@@ -19,12 +19,12 @@ class TestCase extends BaseTestCase
     protected static function getDemoBeMyGuestClient()
     {
         $key = getenv('BEMYGUEST_API_KEY', true) ?: getenv('BEMYGUEST_API_KEY');
-        
+
         if (!$key) {
             throw new Exception("BeMyGuest API key required!");
-            
+
         }
 
-        return new BeMyGuest($key, Environments::DEMO);
+        return new BeMyGuest($key, Environments::DEMO); //testing
     }
 }
